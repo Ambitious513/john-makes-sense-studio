@@ -1,0 +1,64 @@
+{
+  "text": "Your brain isn't broken. It is just trying to protect you.",
+  "voice": "en-US-AndrewNeural",
+  "fps": 30,
+  "seconds": 3.456,
+  "totalFrames": 104,
+  "words": [
+    {
+      "word": "Your",
+      "f0": 3,
+      "f1": 6
+    },
+    {
+      "word": "brain",
+      "f0": 6,
+      "f1": 16
+    },
+    {
+      "word": "isn't",
+      "f0": 20,
+      "f1": 27
+    },
+    {
+      "word": "broken",
+      "f0": 27,
+      "f1": 39
+    },
+    {
+      "word": "It",
+      "f0": 51,
+      "f1": 54
+    },
+    {
+      "word": "is",
+      "f0": 54,
+      "f1": 57
+    },
+    {
+      "word": "just",
+      "f0": 58,
+      "f1": 64
+    },
+    {
+      "word": "trying",
+      "f0": 64,
+      "f1": 71
+    },
+    {
+      "word": "to",
+      "f0": 72,
+      "f1": 73
+    },
+    {
+      "word": "protect",
+      "f0": 74,
+      "f1": 86
+    },
+    {
+      "word": "you",
+      "f0": 86,
+      "f1": 92
+    }
+  ]
+}

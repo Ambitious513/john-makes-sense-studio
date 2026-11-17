@@ -1,0 +1,2027 @@
+﻿[
+    {
+        "file":  "-camera-shutter.wav",
+        "ext":  "wav",
+        "bytes":  165986,
+        "duration":  0.627,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "001.wav",
+        "ext":  "wav",
+        "bytes":  299804,
+        "duration":  1.002,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "002.wav",
+        "ext":  "wav",
+        "bytes":  470798,
+        "duration":  1.596,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "003.wav",
+        "ext":  "wav",
+        "bytes":  271328,
+        "duration":  0.904,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "004.wav",
+        "ext":  "wav",
+        "bytes":  549764,
+        "duration":  1.87,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "005.wav",
+        "ext":  "wav",
+        "bytes":  542264,
+        "duration":  1.849,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "006.wav",
+        "ext":  "wav",
+        "bytes":  749274,
+        "duration":  2.568,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "007.wav",
+        "ext":  "wav",
+        "bytes":  461312,
+        "duration":  1.568,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "008.wav",
+        "ext":  "wav",
+        "bytes":  405104,
+        "duration":  1.373,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "009.wav",
+        "ext":  "wav",
+        "bytes":  578372,
+        "duration":  1.974,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "01 Beating.wav",
+        "ext":  "wav",
+        "bytes":  12289240,
+        "duration":  21.333,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "01 Boom.wav",
+        "ext":  "wav",
+        "bytes":  3750034,
+        "duration":  6.5,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "01 Evolve_Brassy Swell.wav",
+        "ext":  "wav",
+        "bytes":  2731588,
+        "duration":  10.319,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "01 Processing.wav",
+        "ext":  "wav",
+        "bytes":  1026466,
+        "duration":  1.778,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "010.wav",
+        "ext":  "wav",
+        "bytes":  491198,
+        "duration":  1.672,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "02 Deep.wav",
+        "ext":  "wav",
+        "bytes":  2884896,
+        "duration":  5,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "02 Dial-up.wav",
+        "ext":  "wav",
+        "bytes":  2130692,
+        "duration":  3.692,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "02 Evolve_Brassy Drop.2.wav",
+        "ext":  "wav",
+        "bytes":  3841160,
+        "duration":  13.333,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "03 Evolve_Boom Brass D.wav",
+        "ext":  "wav",
+        "bytes":  2117920,
+        "duration":  8,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "03 Grand Hit A.wav",
+        "ext":  "wav",
+        "bytes":  3461654,
+        "duration":  6,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "03 RF Switcher.wav",
+        "ext":  "wav",
+        "bytes":  1346888,
+        "duration":  2.333,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "04 Erased Data.wav",
+        "ext":  "wav",
+        "bytes":  1154630,
+        "duration":  2,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "04 Evolve_Boom Feedback E.wav",
+        "ext":  "wav",
+        "bytes":  2514830,
+        "duration":  9.5,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "04 Grand Hit B.wav.wav",
+        "ext":  "wav",
+        "bytes":  3461652,
+        "duration":  6,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "05 Evolve_Boom Shot.wav",
+        "ext":  "wav",
+        "bytes":  1723266,
+        "duration":  6.5,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "05 Impact.wav",
+        "ext":  "wav",
+        "bytes":  2884896,
+        "duration":  5,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "05 Reboot Failure.wav",
+        "ext":  "wav",
+        "bytes":  4260260,
+        "duration":  7.385,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "06 Drum Roll.wav",
+        "ext":  "wav",
+        "bytes":  2740712,
+        "duration":  4.75,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "06 Evolve_Boom Hint of Metal.wav",
+        "ext":  "wav",
+        "bytes":  1721012,
+        "duration":  6.5,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "06 Portal Hop.wav",
+        "ext":  "wav",
+        "bytes":  1346888,
+        "duration":  2.333,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "07 Line Break.wav",
+        "ext":  "wav",
+        "bytes":  2130692,
+        "duration":  3.692,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "07 Subsonic A.wav",
+        "ext":  "wav",
+        "bytes":  3461652,
+        "duration":  6,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "08 Rewinding.wav",
+        "ext":  "wav",
+        "bytes":  1346888,
+        "duration":  2.333,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "08 Subsonic B.wav.wav",
+        "ext":  "wav",
+        "bytes":  3750032,
+        "duration":  6.5,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "09 Data Transfer.wav",
+        "ext":  "wav",
+        "bytes":  1154630,
+        "duration":  2,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "09 Struck Down.wav",
+        "ext":  "wav",
+        "bytes":  2163956,
+        "duration":  3.75,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "10 Access Denied.wav",
+        "ext":  "wav",
+        "bytes":  3195522,
+        "duration":  5.538,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "10 Dark Drop.wav",
+        "ext":  "wav",
+        "bytes":  6718732,
+        "duration":  11.647,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "10 Evolve_Riser Robo Drums.wav",
+        "ext":  "wav",
+        "bytes":  2922770,
+        "duration":  11.042,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "11 Access Granted.wav",
+        "ext":  "wav",
+        "bytes":  1232286,
+        "duration":  2.135,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "11 Low Quick.wav",
+        "ext":  "wav",
+        "bytes":  2308138,
+        "duration":  4,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "11 Universe Boom A.wav",
+        "ext":  "wav",
+        "bytes":  5090192,
+        "duration":  8.824,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "12 Intermodulation.wav",
+        "ext":  "wav",
+        "bytes":  3727924,
+        "duration":  6.462,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "12 Universe Boom B.wav",
+        "ext":  "wav",
+        "bytes":  3665252,
+        "duration":  6.353,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "13 Metal Slam.wav",
+        "ext":  "wav",
+        "bytes":  4275940,
+        "duration":  7.412,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "13 Restart Switch.wav",
+        "ext":  "wav",
+        "bytes":  666614,
+        "duration":  1.154,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "14 Disc Read.wav",
+        "ext":  "wav",
+        "bytes":  1376520,
+        "duration":  2.385,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "14 Incoming Crash.wav",
+        "ext":  "wav",
+        "bytes":  10586398,
+        "duration":  18.353,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "15 Fast Forward.wav",
+        "ext":  "wav",
+        "bytes":  1279432,
+        "duration":  2.216,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "16 Network Connect.wav",
+        "ext":  "wav",
+        "bytes":  2130692,
+        "duration":  3.692,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "17 Disconnected.wav",
+        "ext":  "wav",
+        "bytes":  2130704,
+        "duration":  3.692,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "18 Termainal Glitch.wav",
+        "ext":  "wav",
+        "bytes":  2529990,
+        "duration":  4.385,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "19 Download.wav",
+        "ext":  "wav",
+        "bytes":  1332150,
+        "duration":  2.308,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "29 Swing A.wav",
+        "ext":  "wav",
+        "bytes":  577868,
+        "duration":  1,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "All type of sound in this video.mp4",
+        "ext":  "mp4",
+        "bytes":  23800672,
+        "duration":  148.909,
+        "codec":  "aac",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Animal Crossing Menu.mp3",
+        "ext":  "mp3",
+        "bytes":  293544,
+        "duration":  12.167,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Applause.wav",
+        "ext":  "wav",
+        "bytes":  4538446,
+        "duration":  25.728,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Apple Notification.wav",
+        "ext":  "wav",
+        "bytes":  335950,
+        "duration":  1.904,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "arrow sounds.mp3",
+        "ext":  "mp3",
+        "bytes":  42041,
+        "duration":  2.426,
+        "codec":  "aac",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Ascending sound effect.mp3",
+        "ext":  "mp3",
+        "bytes":  71469,
+        "duration":  4.4,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "awww.mp3",
+        "ext":  "mp3",
+        "bytes":  37803,
+        "duration":  1.76,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Bloop Cartoon Sound Effect (MP3_160K) (1).mp3",
+        "ext":  "mp3",
+        "bytes":  81390,
+        "duration":  3,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "boom sound effect.mp3",
+        "ext":  "mp3",
+        "bytes":  47117,
+        "duration":  1.32,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "boom-geomorphism-cinematic-trailer-sound-effects-123876.mp3",
+        "ext":  "mp3",
+        "bytes":  509184,
+        "duration":  15.912,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "bottle cork.mp3",
+        "ext":  "mp3",
+        "bytes":  30610,
+        "duration":  0.96,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "BUILD-UP.mp3",
+        "ext":  "mp3",
+        "bytes":  71450,
+        "duration":  1.92,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "camera shot flash 2.wav",
+        "ext":  "wav",
+        "bytes":  185908,
+        "duration":  1.054,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "camera shot flash 4.wav",
+        "ext":  "wav",
+        "bytes":  138884,
+        "duration":  0.787,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "camera shutter 2.mp3",
+        "ext":  "mp3",
+        "bytes":  165986,
+        "duration":  0.627,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "camera-13695.mp3",
+        "ext":  "mp3",
+        "bytes":  13374,
+        "duration":  0.418,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "camera-shutter-6305.mp3",
+        "ext":  "mp3",
+        "bytes":  10867,
+        "duration":  0.34,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  1
+    },
+    {
+        "file":  "camera-shutter-sound-effect.wav",
+        "ext":  "wav",
+        "bytes":  151630,
+        "duration":  0.859,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "CARTOON FART.wav",
+        "ext":  "wav",
+        "bytes":  201284,
+        "duration":  1.118,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Cartoon Splat.wav",
+        "ext":  "wav",
+        "bytes":  178508,
+        "duration":  1.012,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Cash Register (Kaching) - Sound Effect (HD).mp3",
+        "ext":  "mp3",
+        "bytes":  185793,
+        "duration":  3.088,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Cash Register sounds effects No Copyright free use.mp3",
+        "ext":  "mp3",
+        "bytes":  38171,
+        "duration":  2.322,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Cash Register.mp3",
+        "ext":  "mp3",
+        "bytes":  78116,
+        "duration":  3.072,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "cash ting.mp3",
+        "ext":  "mp3",
+        "bytes":  33131,
+        "duration":  1.4,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "cash-register-purchase-87313.mp3",
+        "ext":  "mp3",
+        "bytes":  56160,
+        "duration":  2.808,
+        "codec":  "mp3",
+        "sampleHz":  "24000",
+        "channels":  2
+    },
+    {
+        "file":  "Censor beep sound effect.mp3",
+        "ext":  "mp3",
+        "bytes":  11004,
+        "duration":  0.627,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "censorship .mp3",
+        "ext":  "mp3",
+        "bytes":  406108,
+        "duration":  1.5,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Cinematic Sounds.mp3",
+        "ext":  "mp3",
+        "bytes":  7083918,
+        "duration":  295.102,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "clean-fast-swooshaiff-14784.mp3",
+        "ext":  "mp3",
+        "bytes":  19680,
+        "duration":  0.984,
+        "codec":  "mp3",
+        "sampleHz":  "24000",
+        "channels":  2
+    },
+    {
+        "file":  "Click - Sound Effect (HD).mp3",
+        "ext":  "mp3",
+        "bytes":  152734,
+        "duration":  0.906,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "click sound by 90 Creators.mp3",
+        "ext":  "mp3",
+        "bytes":  63941,
+        "duration":  1.567,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Click.wav",
+        "ext":  "wav",
+        "bytes":  341922,
+        "duration":  1.938,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Clock Tick.mp3",
+        "ext":  "mp3",
+        "bytes":  1450246,
+        "duration":  60.349,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Clock ticking fast.mp3",
+        "ext":  "mp3",
+        "bytes":  213296,
+        "duration":  13.259,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Clock Ticking Sound Effect(MP3_160K).mp3",
+        "ext":  "mp3",
+        "bytes":  291315,
+        "duration":  8.136,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Clock Ticking Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  130989,
+        "duration":  8.115,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "correct sfx.mp3",
+        "ext":  "mp3",
+        "bytes":  34065,
+        "duration":  1.448,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "crowd shocked.mp3",
+        "ext":  "mp3",
+        "bytes":  34835,
+        "duration":  1.496,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "crumpled paper sound fx.mp3",
+        "ext":  "mp3",
+        "bytes":  93133,
+        "duration":  2.325,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Digital counting.mp3",
+        "ext":  "mp3",
+        "bytes":  271578,
+        "duration":  7.059,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Ding Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  114465,
+        "duration":  2.808,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Ding.mp3",
+        "ext":  "mp3",
+        "bytes":  28852,
+        "duration":  0.552,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Discord_Join.mp3",
+        "ext":  "mp3",
+        "bytes":  47705,
+        "duration":  2.914,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Discord_Leave.mp3",
+        "ext":  "mp3",
+        "bytes":  38489,
+        "duration":  2.334,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Display Digits 1.wav",
+        "ext":  "wav",
+        "bytes":  600612,
+        "duration":  3.405,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Display Digits 2.wav",
+        "ext":  "wav",
+        "bytes":  627912,
+        "duration":  3.559,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Display Digits 3.wav",
+        "ext":  "wav",
+        "bytes":  609924,
+        "duration":  3.457,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Display Digits 4.wav",
+        "ext":  "wav",
+        "bytes":  622984,
+        "duration":  3.531,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Drop Disto Sub 1.wav",
+        "ext":  "wav",
+        "bytes":  1522560,
+        "duration":  5.75,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "ES_Jump Swish - SFX Producer.mp3",
+        "ext":  "mp3",
+        "bytes":  50117,
+        "duration":  1.163,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  1
+    },
+    {
+        "file":  "ES_Riser Suction 5 - SFX Producer.mp3",
+        "ext":  "mp3",
+        "bytes":  119371,
+        "duration":  2.901,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "ES_Suction Pop 5 - SFX Producer.mp3",
+        "ext":  "mp3",
+        "bytes":  28018,
+        "duration":  0.608,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  1
+    },
+    {
+        "file":  "fart.mp3",
+        "ext":  "mp3",
+        "bytes":  16775,
+        "duration":  0.368,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Fast Forward Sound Effect(MP3_160K).mp3",
+        "ext":  "mp3",
+        "bytes":  76913,
+        "duration":  2.76,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Fast Whoosh Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  31066,
+        "duration":  1.881,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "fast-whoosh-118248.mp3",
+        "ext":  "mp3",
+        "bytes":  38452,
+        "duration":  1.202,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "futuristic metal keyboard .wav",
+        "ext":  "wav",
+        "bytes":  251714,
+        "duration":  0.951,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Game Menu Select Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  9500,
+        "duration":  1.73,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "GEARS_TURNING_SOUND_EFFECT_FREE_FWOSt38lbFE_137.mp4",
+        "ext":  "mp4",
+        "bytes":  143129,
+        "duration":  9.66,
+        "codec":  "h264",
+        "sampleHz":  null,
+        "channels":  null
+    },
+    {
+        "file":  "Glitch Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  71629,
+        "duration":  3.024,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "good-idea.mp3",
+        "ext":  "mp3",
+        "bytes":  143150,
+        "duration":  3.5,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Goofy 1 ,2 and 3 .mp3",
+        "ext":  "mp3",
+        "bytes":  288547,
+        "duration":  7.136,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Hacking Sound Effect .MP3 (MOST VIEWED VIDEO).mp3",
+        "ext":  "mp3",
+        "bytes":  180525,
+        "duration":  11.215,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Heavy object Hit and body thud sound effect.mp3",
+        "ext":  "mp3",
+        "bytes":  47366,
+        "duration":  2.879,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Hit 1.mp3",
+        "ext":  "mp3",
+        "bytes":  234240,
+        "duration":  5.856,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "hmmm.mp3",
+        "ext":  "mp3",
+        "bytes":  23118,
+        "duration":  0.776,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Iphone Receive.wav",
+        "ext":  "wav",
+        "bytes":  76064,
+        "duration":  0.789,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "48000",
+        "channels":  1
+    },
+    {
+        "file":  "Iphone Send.wav",
+        "ext":  "wav",
+        "bytes":  63314,
+        "duration":  0.656,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "48000",
+        "channels":  1
+    },
+    {
+        "file":  "keyboard press.mp3",
+        "ext":  "mp3",
+        "bytes":  16958,
+        "duration":  0.392,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "keyboard-typing-5997.mp3",
+        "ext":  "mp3",
+        "bytes":  312000,
+        "duration":  15.6,
+        "codec":  "mp3",
+        "sampleHz":  "24000",
+        "channels":  2
+    },
+    {
+        "file":  "kids yeyy.mp3",
+        "ext":  "mp3",
+        "bytes":  88061,
+        "duration":  4.832,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Lens flare transition sound effect.mp3",
+        "ext":  "mp3",
+        "bytes":  14765,
+        "duration":  0.859,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Long whoosh sound effect.mp3",
+        "ext":  "mp3",
+        "bytes":  144020,
+        "duration":  10.971,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Mario Coin Sound - Sound Effect (HD).mp3",
+        "ext":  "mp3",
+        "bytes":  71191,
+        "duration":  1.776,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Message sound.mp3",
+        "ext":  "mp3",
+        "bytes":  32145,
+        "duration":  1.075,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Microsoft Windows XP Error - Sound Effect (HD)-0lhhrUuw2N8-128k-1655433026313.mp3",
+        "ext":  "mp3",
+        "bytes":  50298,
+        "duration":  3.065,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Minecraft Hurt.wav",
+        "ext":  "wav",
+        "bytes":  2199630,
+        "duration":  12.469,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-21-445.mp3",
+        "ext":  "mp3",
+        "bytes":  3188236,
+        "duration":  99.569,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-arrow-whoosh-1491.wav",
+        "ext":  "wav",
+        "bytes":  193972,
+        "duration":  1.099,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-big-cinematic-impact-788.mp3",
+        "ext":  "mp3",
+        "bytes":  321745,
+        "duration":  7.941,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-bike-wheel-spinning-1613.wav",
+        "ext":  "wav",
+        "bytes":  3955586,
+        "duration":  14.949,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-bone-breaking-with-echo-2937.wav",
+        "ext":  "wav",
+        "bytes":  199424,
+        "duration":  1.13,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-cartoon-strong-fart-3050.wav",
+        "ext":  "wav",
+        "bytes":  244314,
+        "duration":  1.385,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-cartoon-toy-whistle-616.wav",
+        "ext":  "wav",
+        "bytes":  320774,
+        "duration":  1.212,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-cinematic-glass-hit-suspense-677.wav",
+        "ext":  "wav",
+        "bytes":  1248626,
+        "duration":  4.719,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-cinematic-transition-wind-swoosh-1468.wav",
+        "ext":  "wav",
+        "bytes":  350138,
+        "duration":  1.323,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-cinematic-wind-swoosh-1471.wav",
+        "ext":  "wav",
+        "bytes":  384278,
+        "duration":  1.452,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-dog-barking-twice-1.wav",
+        "ext":  "wav",
+        "bytes":  286330,
+        "duration":  1.623,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-driving-ambition-32.mp3",
+        "ext":  "mp3",
+        "bytes":  3270947,
+        "duration":  102.15,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-electricity-static-power-up-2600.wav",
+        "ext":  "wav",
+        "bytes":  744266,
+        "duration":  2.812,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-eyes-in-the-puddle-257.mp3",
+        "ext":  "mp3",
+        "bytes":  3796740,
+        "duration":  118.587,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-fast-tape-rewind-cinematic-transition-1092.wav",
+        "ext":  "wav",
+        "bytes":  507320,
+        "duration":  1.917,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-gun-click-1123.wav",
+        "ext":  "wav",
+        "bytes":  229484,
+        "duration":  0.867,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-gun-metal-click-1121.wav",
+        "ext":  "wav",
+        "bytes":  254888,
+        "duration":  0.963,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-hard-pop-click-2364.wav",
+        "ext":  "wav",
+        "bytes":  207272,
+        "duration":  1.175,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-in-and-out-zoom-sound-2622.wav",
+        "ext":  "wav",
+        "bytes":  220604,
+        "duration":  1.25,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-metal-hit-woosh-1485.wav",
+        "ext":  "wav",
+        "bytes":  126926,
+        "duration":  0.479,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-person-blows-2660.wav",
+        "ext":  "wav",
+        "bytes":  111206,
+        "duration":  0.42,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-purple-js-453.mp3",
+        "ext":  "mp3",
+        "bytes":  3018545,
+        "duration":  94.266,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-space-impact-774.wav",
+        "ext":  "wav",
+        "bytes":  872524,
+        "duration":  4.946,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-trap-305.mp3",
+        "ext":  "mp3",
+        "bytes":  3439012,
+        "duration":  107.405,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-warping-slide-1531.wav",
+        "ext":  "wav",
+        "bytes":  354534,
+        "duration":  2,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-we-own-the-night-roll-out-320.mp3",
+        "ext":  "mp3",
+        "bytes":  3688951,
+        "duration":  115.216,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "mixkit-zay-zay-309.mp3",
+        "ext":  "mp3",
+        "bytes":  3107988,
+        "duration":  97.058,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Mountain Audio - New Idea Notification.mp3",
+        "ext":  "mp3",
+        "bytes":  162864,
+        "duration":  4.072,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Mouse click 2.mp3",
+        "ext":  "mp3",
+        "bytes":  123116,
+        "duration":  0.465,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Mouse Click Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  79122,
+        "duration":  3.072,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Mouse Click.mp3",
+        "ext":  "mp3",
+        "bytes":  16213,
+        "duration":  0.344,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "mouse-click-153941.mp3",
+        "ext":  "mp3",
+        "bytes":  33024,
+        "duration":  1.032,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "NO COPYRIGHT BOXING BELL SOUND EFFECT.mp3",
+        "ext":  "mp3",
+        "bytes":  114861,
+        "duration":  7.117,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "onlymp3.to - bass drop sound effect-H9CWQaMYXiI-192k-1688370057.mp3",
+        "ext":  "mp3",
+        "bytes":  101420,
+        "duration":  4.168,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Paper Flip Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  27722,
+        "duration":  1.649,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Paper Ripping.mp3",
+        "ext":  "mp3",
+        "bytes":  29398,
+        "duration":  0.672,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Paper Slide 03.wav",
+        "ext":  "wav",
+        "bytes":  188904,
+        "duration":  1.071,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Paper Sound Effects.mp3",
+        "ext":  "mp3",
+        "bytes":  188218,
+        "duration":  11.68,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "party horn.mp3",
+        "ext":  "mp3",
+        "bytes":  26561,
+        "duration":  0.992,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Podcast Background Music While Talking Interview - Free Music to use, No Copyright - TALK#1.mp3",
+        "ext":  "mp3",
+        "bytes":  7273253,
+        "duration":  302.974,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Pop 1.mp3",
+        "ext":  "mp3",
+        "bytes":  10347,
+        "duration":  0.696,
+        "codec":  "aac",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Pop 9.mp3",
+        "ext":  "mp3",
+        "bytes":  122880,
+        "duration":  3.84,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  1
+    },
+    {
+        "file":  "Pop Bubble Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  17691,
+        "duration":  1.045,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Pop sound effect.mp3",
+        "ext":  "mp3",
+        "bytes":  97978,
+        "duration":  2.016,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Pop up Sound effect ( 256kbps cbr ).mp3",
+        "ext":  "mp3",
+        "bytes":  129127,
+        "duration":  3.966,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Pop.mp3",
+        "ext":  "mp3",
+        "bytes":  43395,
+        "duration":  1.741,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "projector-spinning-1444.wav",
+        "ext":  "wav",
+        "bytes":  3971160,
+        "duration":  21.708,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "punch.mp3",
+        "ext":  "mp3",
+        "bytes":  24064,
+        "duration":  0.824,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "quick-win.mp3",
+        "ext":  "mp3",
+        "bytes":  345398,
+        "duration":  1.95,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Racks.wav",
+        "ext":  "wav",
+        "bytes":  1540174,
+        "duration":  8.731,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Rake Swing Whoosh Close.mp3",
+        "ext":  "mp3",
+        "bytes":  84797,
+        "duration":  2.048,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "rm click (1).wav",
+        "ext":  "wav",
+        "bytes":  136376,
+        "duration":  0.473,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "rm click (2).wav",
+        "ext":  "wav",
+        "bytes":  116360,
+        "duration":  0.404,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "rm click (3).wav",
+        "ext":  "wav",
+        "bytes":  162410,
+        "duration":  0.564,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "rm whoosh.wav",
+        "ext":  "wav",
+        "bytes":  749316,
+        "duration":  1.951,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "96000",
+        "channels":  2
+    },
+    {
+        "file":  "Sci Fi UI Sounds.mp3",
+        "ext":  "mp3",
+        "bytes":  515480,
+        "duration":  32.136,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "SciFi Sound Effects.mp3",
+        "ext":  "mp3",
+        "bytes":  640032,
+        "duration":  39.938,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Short Transition _2 Sound .mp3",
+        "ext":  "mp3",
+        "bytes":  60532,
+        "duration":  1.008,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Short Whoosh.mp3",
+        "ext":  "mp3",
+        "bytes":  705718,
+        "duration":  4,
+        "codec":  "pcm_s16le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "shot light energy.mp3",
+        "ext":  "mp3",
+        "bytes":  1961588,
+        "duration":  7.413,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Shutter Click sound effect (no copyright ).mp3",
+        "ext":  "mp3",
+        "bytes":  15405,
+        "duration":  0.906,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Shutter Click sound effect no copyright.mp3",
+        "ext":  "mp3",
+        "bytes":  16437,
+        "duration":  0.952,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "smooth_pencil_sfx.MP3",
+        "ext":  "mp3",
+        "bytes":  8409,
+        "duration":  0.522,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "SOUND 1.mp3",
+        "ext":  "mp3",
+        "bytes":  38947,
+        "duration":  2.067,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "SOUND 10.mp3",
+        "ext":  "mp3",
+        "bytes":  79825,
+        "duration":  5.879,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "SOUND 2.mp3",
+        "ext":  "mp3",
+        "bytes":  38947,
+        "duration":  2.067,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "SOUND 3.mp3",
+        "ext":  "mp3",
+        "bytes":  30089,
+        "duration":  1.182,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "SOUND 4.mp3",
+        "ext":  "mp3",
+        "bytes":  47825,
+        "duration":  1.059,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "SOUND 5.mp3",
+        "ext":  "mp3",
+        "bytes":  38081,
+        "duration":  1.342,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "SOUND 6.mp3",
+        "ext":  "mp3",
+        "bytes":  38225,
+        "duration":  1.348,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "SOUND 7.mp3",
+        "ext":  "mp3",
+        "bytes":  20297,
+        "duration":  1.089,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "SOUND 8.mp3",
+        "ext":  "mp3",
+        "bytes":  37193,
+        "duration":  1.38,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "SOUND 9.mp3",
+        "ext":  "mp3",
+        "bytes":  27917,
+        "duration":  1.631,
+        "codec":  "mp3",
+        "sampleHz":  "32000",
+        "channels":  2
+    },
+    {
+        "file":  "Sound Effect Glitch.mp3",
+        "ext":  "mp3",
+        "bytes":  61402,
+        "duration":  1.944,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Spooky Wind.wav",
+        "ext":  "wav",
+        "bytes":  2117920,
+        "duration":  8,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Sudden suspense Sound effect.mp3",
+        "ext":  "mp3",
+        "bytes":  58792,
+        "duration":  1.992,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "swinging-staff-whoosh-strong-08-44658.mp3",
+        "ext":  "mp3",
+        "bytes":  13374,
+        "duration":  0.418,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  1
+    },
+    {
+        "file":  "swipes.mp3",
+        "ext":  "mp3",
+        "bytes":  163933,
+        "duration":  9.584,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Swish Swoosh Cutscene Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  202429,
+        "duration":  12.585,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Swoosh.mp3",
+        "ext":  "mp3",
+        "bytes":  60731,
+        "duration":  1.461,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Typewriter.mp3",
+        "ext":  "mp3",
+        "bytes":  90855,
+        "duration":  5.062,
+        "codec":  "aac",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "UI Data Loading Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  241100,
+        "duration":  13.862,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Upset Pulses.wav",
+        "ext":  "wav",
+        "bytes":  3319680,
+        "duration":  12.542,
+        "codec":  "pcm_s24le",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Whoosh 2.mp3",
+        "ext":  "mp3",
+        "bytes":  25412,
+        "duration":  0.888,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "WHOOSH FIRE TRANSITION.mp3",
+        "ext":  "mp3",
+        "bytes":  102711,
+        "duration":  4.56,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "whoosh sound effect.mp3",
+        "ext":  "mp3",
+        "bytes":  17691,
+        "duration":  1.022,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Whoosh Sound Effects _ No Copyright Whoosh Sound Effects.mp3",
+        "ext":  "mp3",
+        "bytes":  229293,
+        "duration":  14.269,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "whoosh-6316.mp3",
+        "ext":  "mp3",
+        "bytes":  9600,
+        "duration":  0.48,
+        "codec":  "mp3",
+        "sampleHz":  "24000",
+        "channels":  2
+    },
+    {
+        "file":  "Wine Glass Shatter.mp3",
+        "ext":  "mp3",
+        "bytes":  133898,
+        "duration":  3.275,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "woosh-building-109596.mp3",
+        "ext":  "mp3",
+        "bytes":  82755,
+        "duration":  2.586,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Writing on keyboard Sound Effect.mp3",
+        "ext":  "mp3",
+        "bytes":  397282,
+        "duration":  18.912,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    },
+    {
+        "file":  "Writing Sound Effect 1.mp3",
+        "ext":  "mp3",
+        "bytes":  50292,
+        "duration":  3.065,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "WRITING Sound Effect 2.mp3",
+        "ext":  "mp3",
+        "bytes":  41932,
+        "duration":  2.554,
+        "codec":  "mp3",
+        "sampleHz":  "44100",
+        "channels":  2
+    },
+    {
+        "file":  "Wrong Answer.mp3",
+        "ext":  "mp3",
+        "bytes":  28442,
+        "duration":  1.16,
+        "codec":  "mp3",
+        "sampleHz":  "48000",
+        "channels":  2
+    }
+]

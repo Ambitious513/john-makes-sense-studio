@@ -1,0 +1,28 @@
+# ---- dependencies ----
+node_modules/
+.venv/
+
+# ---- render outputs (regenerable, do not commit) ----
+**/out/
+dist/
+
+# ---- secrets ----
+.env
+.env.local
+.env*.local
+
+# ---- licensed / reference media — NEVER redistribute ----
+SOUND EFFECTS/
+VIDEO REFERENCES/
+Resources/
+vendor/
+psychology-channel/public/**/*.mp3
+psychology-channel/public/**/*.wav
+
+# ---- local backups ----
+workspace.tar*.gz
+*.tar.gz
+
+# ---- OS noise ----
+.DS_Store
+Thumbs.db

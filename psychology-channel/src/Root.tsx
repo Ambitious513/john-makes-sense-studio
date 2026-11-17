@@ -1,0 +1,145 @@
+// ============================================================
+// ROOT.TSX — Registers all video compositions with Remotion
+// ============================================================
+import { Composition } from 'remotion';
+import { loadFont as loadChewy } from '@remotion/google-fonts/Chewy';
+import { loadFont as loadPatrickHand } from '@remotion/google-fonts/PatrickHand';
+
+// Bundle the two reference fonts locally (no network at render time)
+loadChewy();
+loadPatrickHand();
+
+import { OverthinkerVideo } from './episodes/overthinker/OverthinkerVideo';
+import { QuitLustVideo, TOTAL } from './episodes/quit-lust/QuitLustVideo';
+import { StickFigurePreview, PREVIEW_DURATION } from './episodes/previews/StickFigurePreview';
+import { EntityPreview, ENTITY_PREVIEW_DURATION } from './episodes/previews/EntityPreview';
+import { SetKitPreview, SETKIT_PREVIEW_DURATION } from './episodes/previews/SetKitPreview';
+import { OverlaysPreview, OVERLAYS_PREVIEW_DURATION } from './episodes/previews/OverlaysPreview';
+import { HudPreview, HUD_PREVIEW_DURATION } from './episodes/previews/HudPreview';
+import { DayArcSlice, DEMO_BEATS, dayArcFrames } from './episodes/slices/DayArcSlice';
+
+// Canvas spec
+const FPS = 30;
+
+export const RemotionRoot: React.FC = () => {
+  return (
+    <>
+      {/*
+        VIDEO 1: "What Happens When You Stop Overthinking for 30 Days"
+        FORMAT: Voice Animation
+        Duration: ~4.5 min = 8100 frames @ 30fps
+      */}
+      <Composition
+        id="OverthinkerVideo"
+        component={OverthinkerVideo}
+        durationInFrames={8100}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{}}
+      />
+
+      {/*
+        SHOT-FOR-SHOT RECREATION:
+        "What Happens When You Quit Lust For 30 Days" (reference study)
+        1280x720, 261.15s, synced to the reference voice+SFX track
+      */}
+      <Composition
+        id="QuitLustRecreation"
+        component={QuitLustVideo}
+        durationInFrames={TOTAL}
+        fps={FPS}
+        width={1280}
+        height={720}
+        defaultProps={{}}
+      />
+
+      {/*
+        STICKGUY RIG PREVIEW — full character showcase:
+        15 animation clips + 7 emotion faces + 5 pose presets
+      */}
+      <Composition
+        id="StickFigurePreview"
+        component={StickFigurePreview}
+        durationInFrames={PREVIEW_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{}}
+      />
+
+      {/*
+        ENTITY PREVIEW — the silhouette antagonist:
+        4 staging states + the size-arc role reversal
+      */}
+      <Composition
+        id="EntityPreview"
+        component={EntityPreview}
+        durationInFrames={ENTITY_PREVIEW_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{}}
+      />
+
+      {/*
+        SET KIT PREVIEW — void room, lights, clocks, furniture, costume slots
+      */}
+      <Composition
+        id="SetKitPreview"
+        component={SetKitPreview}
+        durationInFrames={SETKIT_PREVIEW_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{}}
+      />
+
+      {/*
+        OVERLAYS PREVIEW — speed lines, impact flash, notifications,
+        day titles, stat cards, wavy underline
+      */}
+      <Composition
+        id="OverlaysPreview"
+        component={OverlaysPreview}
+        durationInFrames={OVERLAYS_PREVIEW_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{}}
+      />
+
+      {/*
+        HUD PREVIEW — the screen-time counter:
+        tick arc, day-reset jumps, corner placements
+      */}
+      <Composition
+        id="HudPreview"
+        component={HudPreview}
+        durationInFrames={HUD_PREVIEW_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{}}
+      />
+
+      {/*
+        DAY ARC SLICE — the integration scene: one "day" beat pattern
+        wiring characters + set kit + overlays + HUD + SFX.
+        Demo = two days (low point → payoff).
+      */}
+      <Composition
+        id="DayArcSlice"
+        component={DayArcSlice}
+        durationInFrames={dayArcFrames(DEMO_BEATS)}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{ beats: DEMO_BEATS }}
+      />
+    </>
+  );
+};
+
+// Need the React import
+import React from 'react';
