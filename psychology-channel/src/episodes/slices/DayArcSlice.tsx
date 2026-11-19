@@ -15,6 +15,7 @@ import React from 'react';
 import { AbsoluteFill, Sequence, useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
 import { StickGuy } from '../../characters/StickGuy/StickGuy';
 import { ANIMATIONS } from '../../characters/StickGuy/animations';
+import { cycleSeconds, WALK, RUN, walkDistance } from '../../characters/StickGuy/gait';
 import type { AnimationId } from '../../characters/StickGuy/animations';
 import { Entity } from '../../characters/Entity/Entity';
 import { ENTITY_STATES, cower, grow } from '../../characters/Entity/states';
@@ -38,6 +39,12 @@ export interface HeroStep {
   layout?: 'stand' | 'lounge';
   /** phone prop in the right hand */
   phone?: boolean;
+  /** if set, the box TRAVELS at this many rig units/sec for the step, and
+   *  `x` is used only as the endpoint (the walk is stance-locked to it).
+   *  -1 = travels LEFT (the character's facing), +1 = travels RIGHT. */
+  travel?: number;
+  /** traversal direction (default -1 = left) */
+  direction?: -1 | 1;
 }
 
 export interface BallCue {
@@ -127,14 +134,35 @@ const Beat: React.FC<{ beat: DayBeat }> = ({ beat }) => {
   const local = clip.loops
     ? (frame - step.from) % Math.max(1, Math.round(clip.duration * fps))
     : frame - step.from;
-  const heroPose = clip.fn(local, fps);
 
-  /* box x: glide from the previous step's x to this step's target */
-  const xFrom = prevStep.x ?? step.x ?? 44;
-  const xTo = step.x ?? xFrom;
-  const heroX = interpolate(frame, [step.from, step.from + 26], [xFrom, xTo], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
+  /* ---- stance-locked travel ----
+     When a step declares `travel`, the box moves at that rig speed and the
+     clip runs the IK gait at the SAME speed, so the planted sole is
+     world-locked. The box's x in % is the integrated gait distance, and the
+     clip's own speed ramp (1 cycle) covers start/stop. */
+  const travel = step.travel;
+  const isTravelStep = travel !== undefined && (step.clip === 'walk' || step.clip === 'run');
+  const travelCfg = step.clip === 'run' ? RUN : WALK;
+  const travelEnd = cycleSeconds(travelCfg);
+  let heroX: number;
+  let localForClip: number;
+  if (isTravelStep) {
+    const t = Math.max(0, frame - step.from) / fps;
+    const d = walkDistance(t, travelEnd, { ...travelCfg, speed: travel });
+    /* 312px box on a 1920 frame → 1% = 19.2px; a rig unit = 0.4 screen px */
+    heroX = (step.x ?? 38) - (step.direction ?? -1) * (d * 0.4) / 19.2;
+    localForClip = t * fps;
+  } else {
+    const xFrom = prevStep.x ?? step.x ?? 44;
+    const xTo = step.x ?? xFrom;
+    heroX = interpolate(frame, [step.from, step.from + 26], [xFrom, xTo], {
+      extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+    });
+    localForClip = local;
+  }
+  const heroPose = isTravelStep
+    ? clip.fn(localForClip, fps, { direction: step.direction ?? -1, travel })
+    : clip.fn(local, fps);
   const layout = step.layout ?? 'stand';
   const box = HERO_BOX[layout];
 
@@ -508,7 +536,14 @@ export const DEMO_BEATS: DayBeat[] = [
     entity: { mode: 'shrunken' },
     heroSeq: [
       { from: 0, clip: 'resolve', x: 26 },
-      { from: 30, clip: 'walk', x: 38 },
+      {
+        from: 30,
+        clip: 'walk',
+        x: 38,
+        /* travel speed solved so the stance-locked walk covers exactly the
+           12% (230px) to x=38 in one 1.459s cycle at 0.4 screen px/unit */
+        travel: (12 * 19.2) / (cycleSeconds(WALK) * 0.4),
+      },
       { from: 84, clip: 'ballRest', x: 38 },
       { from: 160, clip: 'kick' },
       { from: 230, clip: 'resolve', x: 38 },

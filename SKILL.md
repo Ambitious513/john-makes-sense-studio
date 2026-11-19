@@ -186,7 +186,7 @@ For a genuinely different body plan (robot, child, creature):
 4. Rewrite the renderer's SVG bodies — reuse the same paint order, clip-path hygiene,
    and palette discipline.
 5. Port or import the clips: procedural clips can often be copied unchanged if the
-   channel names match; locomotion should use the gait solver (`characters/StickGuy/lineart/gait.ts`)
+   channel names match; locomotion should use the gait solver (`characters/StickGuy/gait.ts`)
    so feet plant instead of sine-sliding.
 6. Export from `index.ts`, then follow §4 to verify.
 
@@ -392,6 +392,16 @@ and auto-SFX. Demo beats in `DEMO_BEATS` (low point → payoff), composition
 - Hero kicks with the LEFT leg so the ball flies UPPER-LEFT, matching
   the shot. Sign conventions (empirical): armR/armL negative = raised;
   `legL` positive swings the leg UP-left; SVG rotate(+) = clockwise.
+- **Stance-locked walk (productionized 2026-11):** the walk beat uses
+  `HeroStep.travel` — the box travels at a rig-unit speed and the
+  `walk`/`run` clips run the IK gait (`characters/StickGuy/gait.ts`) at
+  the SAME speed, so planted soles are world-locked (unit test:
+  planted-foot world slip < 0.5 px/frame, measured 0.00). The gait is a
+  pure function of distance (phase = distance/(2·step)); the caller MUST
+  move the box at `travel` or the soles skate. Speed ramp is one cycle
+  (closed form in `walkDistance`). `direction` flips the travel axis
+  (-1 = left, the default facing). The renderer is unchanged — the IK
+  produces the same `legL/kneeL/footL` channels.
 
 ### Entity arm transform gotcha (found by the slice)
 

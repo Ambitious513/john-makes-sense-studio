@@ -35,7 +35,7 @@ resolve(230)`; push-in from f26 @ 0.0024/frame; HUD red at 0h 07m
 | # | frames | shot | staging | SFX |
 |---|---|---|---|---|
 | 2.1 | 0–30 | establish (panel 5 mood) | blackout lifts → spotlight cone, hero standing resolve + red headband, ball parked nearby, HUD 0h 07m, shrunken entity far corner | whoosh-short f0, thud f14 |
-| 2.2 | 30–84 | approach | two-step walk-in to the ball (box glides 26% → 38% over 26f) | footsteps-wood f40 vol 0.4 |
+| 2.2 | 30–84 | approach | stance-locked walk-in to the ball (box travels 26% → 38% over 54f, IK gait at matched speed — planted soles, no skate) | footsteps-wood f40 vol 0.4 |
 | 2.3 | 84–160 | THE STANCE (panel 5) | ballRest: LEFT foot planted ON the ball crown (sole bottom y = ball top y, PIL-verified), hands akimbo, smirk down at the ball, determined breathing loop; ball at `calc(38% + 57px)`, bottom `GROUND − 4px` | — |
 | 2.4 | 160–230 | THE KICK (panel 6) | kick one-shot: windup (lean −12, knee −96) → strike ≈ f173 (lean +18, legL 75 ≈ 45° up-left, left fist up beside head, right arm back-down, support knee crouch) → follow-through held through the whole flight; headband tails stream (ramp local/10) | swoosh-fast f167, impact f171, light-energy f185 |
 | 2.5 | 171–231 | flight | ball launches at kickAt 171 (2f before deepest contact — foot and ball leave together): ease-out flight dx −430 dy −470 over 60f, sin arc +90, −10°/f spin, white motion trail streak; speed-lines burst f171–f201; impact flash f171 | — |

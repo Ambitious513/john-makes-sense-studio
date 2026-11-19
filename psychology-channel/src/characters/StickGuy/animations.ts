@@ -1,5 +1,6 @@
 import type { Pose } from './types';
 import { IDLE_POSE, T_POSE, VISEMES, clamp, hash01, lerp } from './rig';
+import { gaitPose, withGait, walkDistance, WALK, RUN, type GaitConfig } from './gait';
 import type { Viseme } from './rig';
 
 /**
@@ -24,6 +25,19 @@ export interface AnimOptions {
   base?: Pose;
   /** disable automatic blinking */
   blink?: boolean;
+}
+
+/** travel options for the stance-locked `walk`/`run` clips. */
+export interface TravelOptions {
+  /** traversal direction: -1 = travels/faces LEFT (default), +1 = right */
+  direction?: -1 | 1;
+  /** override the travel speed (rig units / second). Default = the gait's own
+   *  speed, i.e. the planted soles are world-locked. */
+  travel?: number;
+  /** use a different gait config (step / speed / duty) */
+  gait?: GaitConfig;
+  /** end of the speed ramp, in clip-local seconds (default = unbounded) */
+  rampEnd?: number;
 }
 
 const TAU = Math.PI * 2;
@@ -134,73 +148,76 @@ const wave = (frame: number, fps: number, o?: AnimOptions): Pose => {
   );
 };
 
-const walk = (frame: number, fps: number, o?: AnimOptions): Pose => {
+/**
+ * Walk — stance-locked gait (src/characters/StickGuy/gait.ts).
+ *
+ * By default the feet are world-locked and the box must be moved by the
+ * caller at `gaitDistance/t` (see `walkDistance`), or the soles skate. Set
+ * `travel` (rig units/s) to override the speed; `direction` flips the
+ * travel axis (-1 = travels LEFT, the character's default facing).
+ */
+const walk = (frame: number, fps: number, o?: AnimOptions & TravelOptions): Pose => {
   const k = ctx(frame, fps, o);
   const { t, a } = k;
-  const T = 0.94;
-  const ph = (t * TAU) / T;
-  const s = Math.sin(ph);
-  const bob = Math.abs(Math.sin(ph));
-  return withBlink({
+  const g = o?.gait ?? WALK;
+  const dir = o?.direction ?? -1;
+  const speed = o?.travel ?? g.speed;
+  const cfg: GaitConfig = { ...g, speed };
+  const distance = walkDistance(t, o?.rampEnd ?? t + 3, cfg);
+  const gp = gaitPose(distance, cfg, { direction: dir, amplitude: a });
+  const base: Pose = {
     ...k.base,
-    y: -5 * a * bob + 1.5,
-    x: 1.5 * a * Math.sin(ph / 2),
-    squash: 1 + 0.025 * a * Math.cos(ph * 2),
-    lean: 1.4 * a * s,
-    headTilt: -1.6 * a * s,
-    headBob: 1.4 * a * Math.sin(ph * 2 + 0.4),
-    legL: 17 * a * s,
-    legR: -17 * a * s,
-    kneeL: clamp(24 * a * Math.sin(ph + 2.3), 0, 46),
-    kneeR: clamp(24 * a * Math.sin(ph + 2.3 + Math.PI), 0, 46),
-    footL: 5 + 7 * a * Math.sin(ph + 0.6),
-    footR: 5 + 7 * a * Math.sin(ph + 0.6 + Math.PI),
-    armL: 72 - 15 * a * s,
-    armR: 72 + 15 * a * s,
-    elbowL: 14 + 8 * a * (0.5 + 0.5 * s),
-    elbowR: 14 + 8 * a * (0.5 - 0.5 * s),
+    x: k.base.x,
+    y: k.base.y - gp.bob + 1.5,
+    squash: 1 + 0.025 * a * Math.cos(gp.phase * Math.PI * 4),
+    lean: -1.4 * dir * Math.cos(gp.phase * Math.PI * 2),
+    headTilt: 1.6 * dir * Math.cos(gp.phase * Math.PI * 2),
+    headBob: 1.4 * a * Math.sin(gp.phase * Math.PI * 4 + 0.4),
+    armL: 78 + dir * 13 * Math.cos(gp.phase * Math.PI * 2),
+    armR: 78 - dir * 13 * Math.cos(gp.phase * Math.PI * 2),
+    elbowL: 8,
+    elbowR: 8,
     wristL: -4,
     wristR: -4,
     mouthSmile: 0.6,
-  }, k);
+  };
+  return withGait(withBlink(base, k), gp, a);
 };
 
-const run = (frame: number, fps: number, o?: AnimOptions): Pose => {
+/**
+ * Run — stance-locked gait at RUN cadence, with a forward lean and a bigger
+ * swing (see `walk` for the options).
+ */
+const run = (frame: number, fps: number, o?: AnimOptions & TravelOptions): Pose => {
   const k = ctx(frame, fps, o);
   const { t, a } = k;
-  const T = 0.58;
-  const ph = (t * TAU) / T;
-  const s = Math.sin(ph);
-  const bob = Math.abs(Math.sin(ph));
-  return withBlink(
-    {
-      ...k.base,
-      y: -13 * a * bob + 4,
-      squash: 1 + 0.05 * a * Math.cos(ph * 2),
-      lean: 4.5 + 1.6 * a * s,
-      headTilt: -3 - 1.4 * a * s,
-      headBob: 2.2 * a * Math.sin(ph * 2),
-      legL: 30 * a * s,
-      legR: -30 * a * s,
-      kneeL: clamp(46 * a * Math.sin(ph + 2.1), 0, 82),
-      kneeR: clamp(46 * a * Math.sin(ph + 2.1 + Math.PI), 0, 82),
-      footL: 8 + 12 * a * Math.sin(ph + 0.7),
-      footR: 8 + 12 * a * Math.sin(ph + 0.7 + Math.PI),
-      armL: 46 - 30 * a * s,
-      armR: 46 + 30 * a * s,
-      elbowL: 62 + 16 * a * s,
-      elbowR: 62 - 16 * a * s,
-      wristL: -10,
-      wristR: -10,
-      eyeOpen: 0.68,
-      mouthOpen: 0.22 + 0.12 * bob,
-      mouthSmile: 0.35,
-      browRaise: -1.5,
-      browTilt: 5,
-    },
-    k,
-    0.68,
-  );
+  const g = o?.gait ?? RUN;
+  const dir = o?.direction ?? -1;
+  const speed = o?.travel ?? g.speed;
+  const cfg: GaitConfig = { ...g, speed };
+  const distance = walkDistance(t, o?.rampEnd ?? t + 3, cfg);
+  const gp = gaitPose(distance, cfg, { direction: dir, amplitude: a, bob: 8 });
+  const base: Pose = {
+    ...k.base,
+    x: k.base.x,
+    y: k.base.y - gp.bob + 4,
+    squash: 1 + 0.05 * a * Math.cos(gp.phase * Math.PI * 4),
+    lean: dir * 4.5 + dir * 1.6 * a * Math.cos(gp.phase * Math.PI * 2),
+    headTilt: -3 - 1.4 * a * Math.cos(gp.phase * Math.PI * 2),
+    headBob: 2.2 * a * Math.sin(gp.phase * Math.PI * 4),
+    armL: 46 + dir * 30 * Math.cos(gp.phase * Math.PI * 2),
+    armR: 46 - dir * 30 * Math.cos(gp.phase * Math.PI * 2),
+    elbowL: 62 + 16 * a * Math.cos(gp.phase * Math.PI * 2),
+    elbowR: 62 - 16 * a * Math.cos(gp.phase * Math.PI * 2),
+    wristL: -10,
+    wristR: -10,
+    eyeOpen: 0.68,
+    mouthOpen: 0.22 + 0.12 * Math.abs(Math.sin(gp.phase * Math.PI * 2)),
+    mouthSmile: 0.35,
+    browRaise: -1.5,
+    browTilt: 5,
+  };
+  return withGait(withBlink(base, k, 0.68), gp, a);
 };
 
 /** Cheap, deterministic "talking" mouth. Swap in `textToVisemes` for real lip-sync. */
@@ -794,7 +811,7 @@ export interface AnimationClip {
   /** seconds for one loop (or one shot for `jump`) */
   duration: number;
   loops: boolean;
-  fn: (frame: number, fps: number, o?: AnimOptions) => Pose;
+  fn: (frame: number, fps: number, o?: AnimOptions & TravelOptions) => Pose;
 }
 
 export const ANIMATIONS: Record<AnimationId, AnimationClip> = {

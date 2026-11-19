@@ -31,7 +31,8 @@
     "build": "remotion bundle",
     "render": "remotion render",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "test": "node --import tsx --test \"src/**/*.test.ts\""
   },
   "allowScripts": {
     "esbuild": false
