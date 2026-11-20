@@ -60,8 +60,34 @@ def main():
     ])
 
     m2 = measure(dst)
+    # loudnorm's own limiter does not always hold the true peak through the AAC
+    # encode (measured: a -2.0 target came out at -0.13 dBTP). Fall back to a
+    # single-pass normalisation aimed well below the ceiling: it trades a couple
+    # of LUFS of loudness for a peak that is actually compliant.
+    if m2 and float(m2["input_tp"]) > -1.0:
+        run([
+            "ffmpeg", "-y", "-i", src,
+            "-af", f"loudnorm=I={TARGET_I}:TP=-3.5:LRA={TARGET_LRA}",
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", dst,
+        ])
+        m2 = measure(dst)
     if m2:
-        print(f"out: {m2['input_i']} LUFS | peak {m2['input_tp']} dBTP")
+        i2, tp2 = float(m2["input_i"]), float(m2["input_tp"])
+        print(f"out: {i2:7.2f} LUFS | peak {tp2:6.2f} dBTP")
+        crest = tp2 - i2
+        if tp2 > -1.0:
+            print("  FAIL: true peak above the -1.0 dBTP delivery ceiling")
+        elif abs(i2 + 14.0) > 1.0:
+            # A bed of footsteps and ambience is sparse: its peak sits ~22 dB
+            # above its average, so reaching -14 LUFS would need peaks above 0
+            # dBFS. That is not a filter problem, it is a missing layer — the
+            # target needs a dense mix (voice + music + SFX), which an episode
+            # has and a bare test shot does not.
+            print(f"  SHORT of target by {abs(i2 + 14.0):.1f} LU at a {crest:.1f} dB crest factor.")
+            print("  Peak is compliant, so this is safe to publish; to hit -14 add a")
+            print("  sustained layer (voice or music) rather than pushing the limiter.")
+        else:
+            print("  PASS: within -14 LUFS +/- 1 and under the true-peak ceiling")
     print(f"-> {dst}")
 
 

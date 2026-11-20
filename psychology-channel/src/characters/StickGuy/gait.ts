@@ -30,10 +30,52 @@ export const THIGH_VEC = { x: -10, y: 120 };
 export const SHIN_VEC = { x: -8, y: 112 };
 export const L1 = Math.hypot(THIGH_VEC.x, THIGH_VEC.y);
 export const L2 = Math.hypot(SHIN_VEC.x, SHIN_VEC.y);
-const THIGH_BASE = Math.atan2(THIGH_VEC.y, THIGH_VEC.x) * DEG;
-const SHIN_BASE = Math.atan2(SHIN_VEC.y, SHIN_VEC.x) * DEG;
 /** ankle y with the sole flat on the ground line */
 export const STAND_ANKLE_Y = 630;
+
+/**
+ * The bones the gait solves against. The engine is character-agnostic: only
+ * these numbers change between rigs, which is why a new character reuses the
+ * same stance-locked gait instead of forking it.
+ *
+ * Convention (identical for every rig here): the leg is drawn
+ * `rotate(leg, hip) → translate(hip) → thigh art → translate(thigh) →
+ *  rotate(-knee) → shin art → translate(shin) → rotate(foot) → foot art`,
+ * with `leg` positive swinging the thigh toward -x (the default facing).
+ */
+export interface Skeleton {
+  /** figure axis; the right side is mirrored with translate(2*centerX) scale(-1 1) */
+  centerX: number;
+  hipL: { x: number; y: number };
+  hipR: { x: number; y: number };
+  /** ankle y when standing with the sole flat on the ground line */
+  ankleY: number;
+  thigh: { x: number; y: number };
+  shin: { x: number; y: number };
+}
+
+export const STICKGUY_SKELETON: Skeleton = {
+  centerX: 345,
+  hipL: { x: RIG.hipL.x, y: RIG.hipL.y },
+  hipR: { x: 375, y: RIG.hipL.y },
+  ankleY: STAND_ANKLE_Y,
+  thigh: THIGH_VEC,
+  shin: SHIN_VEC,
+};
+
+interface LegGeom {
+  l1: number;
+  l2: number;
+  tBase: number;
+  sBase: number;
+}
+
+const geomOf = (sk: Skeleton): LegGeom => ({
+  l1: Math.hypot(sk.thigh.x, sk.thigh.y),
+  l2: Math.hypot(sk.shin.x, sk.shin.y),
+  tBase: Math.atan2(sk.thigh.y, sk.thigh.x) * DEG,
+  sBase: Math.atan2(sk.shin.y, sk.shin.x) * DEG,
+});
 
 export interface LegChannels {
   leg: number;
@@ -52,7 +94,9 @@ export function legIK(
   target: { x: number; y: number },
   toe: number,
   bend: 1 | -1,
+  sk: Skeleton = STICKGUY_SKELETON,
 ): LegChannels {
+  const { l1: L1, l2: L2, tBase: THIGH_BASE, sBase: SHIN_BASE } = geomOf(sk);
   const dx = target.x - hip.x;
   const dy = target.y - hip.y;
   const raw = Math.hypot(dx, dy) || 0.0001;
@@ -144,6 +188,22 @@ export interface GaitPoseOptions {
   ramps?: boolean;
   /** root bob amplitude scale (rig units) */
   bob?: number;
+  /** which rig to solve for (default StickGuy's; every rig shares this engine) */
+  sk?: Skeleton;
+  /**
+   * Arc stance: the ankle target follows the reachable circle about the hip
+   * (`y = hipY + sqrt(R² - relX²)`) instead of a constant height.
+   *
+   * A flat-footed stance at a constant ankle height is geometrically impossible
+   * for a long stride: with a nearly straight standing leg the hip-to-ankle
+   * distance is already the bone sum, so the moment the foot moves forward the
+   * target leaves the reachable disc, the IK clamps, and the planted sole
+   * SKATES (measured: 5 u/frame). The arc is what a real leg does — it stays
+   * straight under the body and shortens vertically as it swings out, while the
+   * heel/toe rotation (`footAt`'s +13 → 0 → -19) keeps a contact point on the
+   * ground. It also makes the horizontal lock exact by construction.
+   */
+  arc?: boolean;
 }
 
 const lerpCh = (a: LegChannels, b: LegChannels, t: number): LegChannels => ({
@@ -174,19 +234,48 @@ export interface GaitPose {
  */
 export function gaitPose(distance: number, g: GaitConfig, o: GaitPoseOptions = {}): GaitPose {
   const dir = o.direction ?? -1;
+  const sk = o.sk ?? STICKGUY_SKELETON;
+  const mirror = 2 * sk.centerX;
   const phase = (((distance / (2 * g.step)) % 1) + 1) % 1;
   const fL = footAt(phase, g);
   const fR = footAt((phase + 0.5) % 1, g);
 
-  const yBob = (o.bob ?? 5) * Math.abs(Math.sin(phase * Math.PI * 2));
-  const ankleY = STAND_ANKLE_Y - yBob;
+  /* ---- stance geometry ----
+   * A planted foot must be at the ground line AND at relX from the hip. With a
+   * nearly straight standing leg the bone sum R is already the hip-to-ankle
+   * distance, so holding the ankle at a constant height while the foot moves
+   * forward puts the target OUTSIDE the reachable disc: the IK clamps and the
+   * sole skates (measured 5 u/frame). The fix is what a real body does — the hip
+   * drops as the legs spread, so the ankle stays exactly on the ground:
+   *
+   *   v  = vertical hip→ankle reach for the most-extended planted foot
+   *   target(body) = (hip.x + dir·relX , hip.y + v − lift)
+   *   root y       = R − v            (the body sinks as the legs spread)
+   *   world ankle  = hip.y + v + (R − v) = hip.y + R   ← constant: planted.
+   *
+   * Returned `bob` is v − R (≤ 0, the body is highest at mid-stance), which the
+   * caller applies as `pose.y = -bob`.
+   */
+  const geom = geomOf(sk);
+  const R = geom.l1 + geom.l2;
+  const reach = (relX: number) => Math.sqrt(Math.max(R * R - relX * relX, 1));
 
-  const tL = { x: RIG.hipL.x + dir * fL.relX, y: ankleY - fL.lift };
-  const tRw = { x: 375 + dir * fR.relX, y: ankleY - fR.lift };
-  const tR = { x: 690 - tRw.x, y: tRw.y };
+  let v = R;
+  let yBob: number;
+  if (o.arc) {
+    v = Math.min(fL.contact ? reach(fL.relX) : R, fR.contact ? reach(fR.relX) : R);
+    yBob = v - R;
+  } else {
+    yBob = (o.bob ?? 5) * Math.abs(Math.sin(phase * Math.PI * 2));
+  }
+  const ankleY = o.arc ? sk.hipL.y + v : sk.ankleY - yBob;
 
-  const gaitL = legIK(RIG.hipL, tL, fL.toe * dir, -1);
-  const gaitR = legIK(RIGHT_HIP_LEFT_SPACE, tR, fR.toe * dir, 1);
+  const tL = { x: sk.hipL.x + dir * fL.relX, y: ankleY - fL.lift };
+  const tRw = { x: sk.hipR.x + dir * fR.relX, y: ankleY - fR.lift };
+  const tR = { x: mirror - tRw.x, y: tRw.y };
+
+  const gaitL = legIK(sk.hipL, tL, fL.toe * dir, -1, sk);
+  const gaitR = legIK({ x: mirror - sk.hipR.x, y: sk.hipR.y }, tR, fR.toe * dir, 1, sk);
 
   const chL = lerpCh(STANDING, gaitL, o.amplitude ?? 1);
   const chR = lerpCh(STANDING, gaitR, o.amplitude ?? 1);

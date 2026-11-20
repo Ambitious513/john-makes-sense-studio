@@ -17,6 +17,7 @@ import { SetKitPreview, SETKIT_PREVIEW_DURATION } from './episodes/previews/SetK
 import { OverlaysPreview, OVERLAYS_PREVIEW_DURATION } from './episodes/previews/OverlaysPreview';
 import { HudPreview, HUD_PREVIEW_DURATION } from './episodes/previews/HudPreview';
 import { DayArcSlice, DEMO_BEATS, dayArcFrames } from './episodes/slices/DayArcSlice';
+import { StreetWalk, DURATION as STREET_WALK_DURATION } from './episodes/street/StreetWalk';
 
 // Canvas spec
 const FPS = 30;
@@ -117,6 +118,21 @@ export const RemotionRoot: React.FC = () => {
         id="HudPreview"
         component={HudPreview}
         durationInFrames={HUD_PREVIEW_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{}}
+      />
+
+      {/*
+        STREET WALK — the sheet character (SweaterGuy) walking a sidewalk.
+        Tests the whole engine at once: measured rig fidelity, stance-locked
+        gait, parallax set, and audio cues on real heel strikes.
+      */}
+      <Composition
+        id="StreetWalk"
+        component={StreetWalk}
+        durationInFrames={STREET_WALK_DURATION}
         fps={FPS}
         width={1920}
         height={1080}

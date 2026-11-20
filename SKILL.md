@@ -198,14 +198,72 @@ For a genuinely different body plan (robot, child, creature):
 6. Export from `index.ts`, then follow §4 to verify.
 
 ### Path C — from an image / character sheet
-1. Study the sheet: silhouette, proportions (head-to-body ratio), face construction,
-   clothing shapes, palette, distinctive details (hair, accessories, props).
-2. Write the layer plan in comments first: what hangs off which pivot.
-3. Measure proportions in units — pick a rig box (StickGuy uses 690×700) and place
-   hips at a fixed anchor; everything else derives from `RIG`.
-4. Build layers back-to-front in the renderer; verify each part in `debug` mode
-   (`<StickGuy pose={T_POSE} debug />`) before animating.
-5. Match the palette to the sheet, converted to flat 2–3 tone fills per part.
+
+This is how `SweaterGuy` was built from a supplied sheet. Every step produces a
+number, because every guess here became a visible bug:
+
+1. **`tools/sheet_tokens.py` / `tools/sheet_profile.py` — sample, don't eyeball.**
+   Palette = the median pixel inside each material at a landmark coordinate.
+   The sheet's actual tokens: paper `#FCF5EB`, sweater `#546172`, pants
+   `#383F45`, hair `#393F47`, shoes `#1A1512`, ink `#17161C`, shadow `#E4D8CB`.
+2. **Find the SOLE line before normalising anything (`tools/sheet_feet.py`).**
+   The sheet draws a beige ground shadow whose dark speckles reach 7.6% below
+   the feet. Profiling the raw bounding box makes the whole body 7.6% too short
+   and every proportion wrong with it. Head top → sole is the only honest height.
+3. **Profile by contiguous runs, not max–min (`tools/sheet_probe.py`).**
+   JPEG speckle puts 2–5 px runs tens of units away from the body. A per-row
+   max–min span read the hair as 2.3× its real width. Two of my first
+   "measurements" disagreed for exactly this reason.
+4. **Pick a symmetric reference figure.** Sheet fig1 is slouched — head right of
+   the hips — so a centroid-aligned comparison penalises proportions that already
+   match. `tools/measure_sheet_fidelity.py` registers horizontally instead.
+5. **Build the rig, then gate it.** `npx remotion still src/look/look-index.tsx
+   SweaterMatch out/look/sweater-match.png` then `python
+   tools/measure_sheet_fidelity.py` → IoU vs the sheet figure. Shipped value:
+   **0.8050**, width-profile MAE 15.6 u, every row within ±16.
+
+Two traps in the gate itself, both of which produced a wrong verdict first:
+
+- **Skin is ~3/255 from the paper.** A threshold mask is a hollow OUTLINE, so
+  rows measured the stroke, not the body. The harness therefore renders on a flat
+  key colour (`#F01FD4`) and both sides are row-filled into solid envelopes.
+- **The noise filter must be asymmetric.** The opening that removes the sheet's
+  speckle also erases our 4.5-unit ink outlines. Apply it to the sheet only.
+
+### Gait findings from building a second character
+
+The gait engine is now skeleton-parameterised (`Skeleton` in
+`src/characters/StickGuy/gait.ts`): one engine, many rigs, same `Pose` contract.
+Porting a new body onto it exposed three things the old analytic test could not
+see, because it measured `footAt`'s promise rather than the drawn pixels:
+
+- **A flat-footed stance at a constant ankle height cannot produce a long
+  stride.** With a nearly straight standing leg the hip→ankle distance already
+  equals the bone sum, so as soon as the foot moves forward the target leaves the
+  reachable disc, the IK clamps, and the sole skates — measured **5 u/frame**.
+  Fix: `arc: true`, which drops the body as the legs spread
+  (`v = sqrt(R² − relX²)`, root y = `R − v`), so the world ankle height is
+  constant by construction and the stride stays exact.
+- **An oscillating `lean` rotates the planted foot about the hip.** ±1.6° is
+  2.3 u/frame of skate. Lean is posture, not cadence: hold it constant in a walk.
+- **An oscillating `squash` slides the feet.** The root scales about the ground
+  vertically but about `CENTRE_X` horizontally, so any foot not under the centre
+  moves ~0.4 u/frame. Squash belongs to jumps and landings, not to a cycle that
+  must plant.
+
+The gates that now prove it, end to end:
+
+| gate | command | ships at |
+|---|---|---|
+| chain slip (math) | `npm test` (SweaterGuy/gait.test.ts) | < 0.5 u/frame |
+| sole on ground (math) | same | < 6 u |
+| **slip in rendered pixels** | `tools/measure_render_slip.py f60 f65` | 0.10 px/frame |
+| soles on the set's ground line | `tools/check_hero_placement.py` | ±2 px |
+
+`measure_render_slip.py` compares the planted shoe's screen shift with the
+pavement's own joint shift — the only slip test a viewer could repeat. Its first
+version passed vacuously because it detected lamppost bases instead of shoes;
+it now searches only the hero box and demands real shoe mass.
 
 ---
 
@@ -435,6 +493,45 @@ leaves the arms floating at the rig edges. And with that correct transform,
 because the floating arms rotated into plausible-looking positions.)
 Also: the `tempt` clip writes its own armSpread — clamp/override AFTER
 calling the clip, not in the base pose.
+
+---
+
+## 3g. Street — side-on sidewalk set with real parallax (`src/characters/SetKit/Street.tsx`)
+
+`<Street scroll={px} />` takes ONE input: how far the camera has travelled along
+the pavement, in screen pixels at the ground plane. Layers then scroll at fixed
+parallax factors — clouds 0.1, skyline 0.25, shopfronts 0.5, **ground and street
+furniture 1.0**. The ground layer at 1.0 is what a planted foot is measured
+against; anything else reads as skating.
+
+The shot that uses it (`src/episodes/street/StreetWalk.tsx`) is the coupling
+made visible:
+
+```
+distance (rig units) ──► walkState pose      ──► legs
+                    └────► scroll = d * SCALE ──► ground at parallax 1.0
+```
+
+One number, two consumers, so the feet and the pavement cannot disagree.
+
+Set rules learned building it:
+
+- **Every tint is a shade of the sheet's paper or the sweater's blue-grey.** Red
+  is absent from the world on purpose — it is the character's identity token, and
+  a red prop competes with it.
+- **Props must be excluded from character measurement.** The first slip gate
+  "passed" while detecting lamppost bases: props also sit on the ground line and
+  have dark outlines. Search the hero box only, and require mass.
+- **Place the figure by its ground line, not its box.** `VIEWBOX_GROUND` makes
+  the viewBox bottom the ground, so `top = GROUND_Y - GROUND_FRACTION * height`
+  lands the soles on the pavement exactly. Using the ordinary `VIEWBOX` floated
+  him 35 px above the street.
+- **A sparse bed cannot reach −14 LUFS.** Footsteps + ambience sit ~22 dB below
+  their own peaks, so normalising to −14 needs peaks above 0 dBFS. `final_mix.py`
+  now says so explicitly instead of silently undershooting, and falls back to a
+  conservative true-peak target when loudnorm's limiter leaks through the AAC
+  encode (measured: a −2.0 target came out at −0.13 dBTP). The target is for
+  full mixes — voice + music + SFX — which is what an episode has.
 
 ---
 
