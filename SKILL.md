@@ -39,14 +39,22 @@ psychology-channel/public/voice/   # TTS lines + word timings (generator: tools/
 
 ## 1. The non-negotiable rules
 
-1. **Everything is code.** No image assets, no sprites, no fonts inside the character.
-   Pure SVG built from React elements. Crisp at any resolution.
+1. **Code owns the world and the graphics; a video model owns the hero's
+   performance.** Backgrounds, sets, HUD, captions, titles, overlays, timing and
+   assembly are code. Complex character acting and motion are generated clips.
+   The rig is no longer the renderer of the hero — it is the **previz** and the
+   **identity oracle** that keeps every generated take on-model. (Rule 1 used to
+   read "everything is code"; that was revised on 2026-11-20 — see
+   `docs/architecture.md` §2.4 for the reasoning, and don't re-litigate it here.)
 2. **Every joint is a number.** If a value is in the `Pose`, it is animatable. If a body
    part exists in the SVG, it hangs off a named pivot in `RIG`.
-3. **Deterministic only.** A frame number + fps must fully define the picture.
+3. **Deterministic where it is ours.** A code-rendered frame number + fps must fully
+   define the picture.
    - No `Math.random()` (use `random()` from Remotion, or `hash01(n)` / engine `rnd(seed, i)`).
    - No `requestAnimationFrame`, no wall-clock time, no state carried between frames.
    - No imperative DOM mutation. Render is a pure function.
+   - A generated clip is NOT deterministic, so it is versioned as a file and its
+     model/prompt/seed/source-image/take are recorded in `params.json`.
 4. **Flat style.** Solid fills, one ink color, no gradients inside the character.
    Rounded caps and joins. Clean silhouette reads at 200px and at 4K.
 5. **Verify before declaring done.** `npx tsc --noEmit` + `npx eslint src` must both be
