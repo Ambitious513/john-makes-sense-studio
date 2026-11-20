@@ -558,6 +558,10 @@ export function StickGuy({
             stroke={c.ink}
             strokeWidth={sw * 1.1}
           />
+          {/* costume/headwear slot — on the SKULL, not the face: it must not
+              slide with headTurn (the features shift, a hat does not), and it
+              sits under the features so it can never paint over the eyes. */}
+          {headSlot}
           <g transform={`translate(${345 + faceShift} 0) scale(${faceSquash} 1) translate(-345 0)`}>
             {/* brows — browBend morphs the arc into an angry V */}
             <g transform={`translate(0 ${browY})`}>
@@ -603,8 +607,6 @@ export function StickGuy({
                 />
               </g>
             )}
-            {/* costume/headwear slot — over the skull, follows head tilt */}
-            {headSlot}
           </g>
           {debug && (
             <circle cx={RIG.neck.x} cy={RIG.neck.y} r={5} fill="#FF3D8A" />

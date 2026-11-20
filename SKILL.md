@@ -95,6 +95,13 @@ Define three things:
   BEHIND the torso, so knees-up partially hides behind the body.
 - **Doom stare** = eyeOpen 0.26 + lookY 0.55 (0.12 reads sleepy-sad, not dead).
 - **Hollow stare** = eyeOpen 0.7 + pupil 0.55 (wide + pupil 0.42 reads "shocked").
+- **Resting face is ALERT (locked).** `T_POSE` = `eyeOpen 0.9, pupil 1.35,
+  browRaise -3` (the EyeStudy winner). The old `eyeOpen 0.5` rest read exhausted,
+  which made every unattended frame look depressed. At the slice's 0.4 px/unit
+  scale the eye aperture is ~17 px instead of ~9 px — that is the difference
+  between "awake" and "asleep on his feet". Emotional lows are AUTHORED per clip
+  (`doom`, `hollow`, … all set their own eyeOpen), so never lower the rest to
+  soften a beat — pick the face.
 - Props in `handSlotR` are x-flipped on screen (right arm group is mirrored,
   `scale(-1 1)`) and render UNDER the forearm — offset props upward to peek over gloves.
 
@@ -250,11 +257,25 @@ Props: `VoidRoom` (ground line field, `groundFrac` default 0.22, optional
 `Dresser`, `CrackedMirror` (`crack` 0..1, `reflection` slot — put the Entity
 there), `SoccerBall`.
 
-**Costume slots** (authored in StickGuy head space — head centre 345,92 r 82):
-`RedHeadband` (resolve/discipline — shallow arc across the FOREHEAD,
-`M 269,74 Q 345,46 421,74`, not an over-the-skull arc) and `RedBeanie` (the
-kid). Pass through `<StickGuy headSlot={...}>` — the slot renders inside the
-head group and follows head tilt.
+**Costume slots** (authored in StickGuy head space — head centre 345,92 r 82).
+The beanie is the signature: **`RedBeanie` is the default identity** (`DayBeat`
+with no `headSlot` gets it), `RedHeadband` = resolve mode, `'none'` = bare head.
+Pass through `<StickGuy headSlot={...}>`.
+
+Two hard rules, both mealy-verified by `tools/measure_headslot.py`:
+
+1. **Slots paint on the SKULL, not the face.** `{headSlot}` renders right after
+   the head outline, *before* the face group — so it does not slide with
+   `headTurn` (a hat stays on the head while features shift) and it is
+   physically unable to paint over an eye.
+2. **A slot ends ABOVE y 65.5** (the eye top). The face is packed high: brows
+   46–66, eyes 65.5–112.5, so there is only ~36 units of forehead. Current art:
+   beanie brim to y 58, headband arc `M 274,58 Q 345,32 416,58` stroke 11.
+   Do not "fix" a hat by nudging it down — it eats the pupils and the character
+   reads dead. Gate: `npx remotion still src/look/look-index.tsx HeadSlotAudit
+   out/look/slots.png` then `python tools/measure_headslot.py` → red-inside-eye
+   must be 0 and eye-band ink within 2% of the no-slot baseline, front AND
+   profile.
 
 Staging: furniture slightly darker than the character reads "background";
 keep one light source per scene; clocks are the only props that tell time.

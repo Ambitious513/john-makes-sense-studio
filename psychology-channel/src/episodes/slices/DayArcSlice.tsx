@@ -60,7 +60,8 @@ export interface BallCue {
 export interface DayBeat {
   label: string;
   frames: number;
-  /** costume state = mindset state */
+  /** costume state = mindset state. Default = the red beanie (his identity);
+   *  'headband' = resolve mode; 'none' = bare head. */
   headSlot?: 'headband' | 'beanie' | 'none';
   set?: 'couch' | 'spotlight' | 'empty';
   screenTime?: { startMinutes: number; perSecond: number; alarmAt?: number };
@@ -351,7 +352,11 @@ const Beat: React.FC<{ beat: DayBeat }> = ({ beat }) => {
             pose={heroPose}
             width={box.w} height={box.h} viewBox={box.viewBox}
             shadow={layout === 'stand'}
-            headSlot={beat.headSlot === 'headband' ? <RedHeadband stream={headbandStream} /> : beat.headSlot === 'beanie' ? <RedBeanie /> : undefined}
+            headSlot={
+              beat.headSlot === 'none' ? undefined
+              : beat.headSlot === 'headband' ? <RedHeadband stream={headbandStream} />
+              : <RedBeanie />
+            }
             handSlotL={step.phone && layout === 'lounge' ? <PhoneGlow lying /> : undefined}
             handSlotR={step.phone && layout !== 'lounge' ? <PhoneGlow /> : undefined}
           />

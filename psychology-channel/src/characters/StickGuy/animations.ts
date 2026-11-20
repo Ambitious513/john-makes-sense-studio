@@ -77,7 +77,7 @@ function ctx(frame: number, fps: number, o: AnimOptions = {}): Ctx {
   };
 }
 
-const withBlink = (p: Pose, k: Ctx, open = 0.5): Pose => ({
+const withBlink = (p: Pose, k: Ctx, open = 0.9): Pose => ({
   ...p,
   eyeOpen: k.blink ? open * blinkTrack(k.t, k.seed) : open,
 });

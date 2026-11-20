@@ -46,7 +46,10 @@ export const DEFAULT_PALETTE: Palette = {
   shadow: '#0B1016',
 };
 
-/** The exact T-pose of the supplied reference sheet. */
+/** The rig rest state — the reference sheet's alert neutral face.
+ *  (Was eyeOpen 0.5 / "sleepy lid"; the look audit showed the resting face
+ *  read exhausted. 0.9 + bigger pupils + slightly lowered brows = alert,
+ *  matching the sheet. Emotional lows are still authored per-clip.) */
 export const T_POSE: Pose = {
   x: 0,
   y: 0,
@@ -58,15 +61,15 @@ export const T_POSE: Pose = {
   headTurn: 0,
   headBob: 0,
 
-  eyeOpen: 0.5,
+  eyeOpen: 0.9,
   lookX: 0,
   lookY: 0,
-  browRaise: 0,
+  browRaise: -3,
   browTilt: 0,
   mouthOpen: 0,
   mouthSmile: 0.55,
   mouthWidth: 0.92,
-  pupil: 1,
+  pupil: 1.35,
   teeth: 0,
   sweat: 0,
   browBend: 0,

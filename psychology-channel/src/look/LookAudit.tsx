@@ -289,3 +289,74 @@ export const EyeStudyRoot: React.FC = () => (
     height={1080}
   />
 );
+
+/* ------------------------- head-slot audit ------------------------- */
+
+/**
+ * Costume slots are drawn LAST (over the face), so each one has to be checked
+ * for occlusion: a brim on the eye line hides pupils, and a hidden pupil reads
+ * as a dead character. This composition renders the head large and unobstructed
+ * so `out/look/measure_slots.py` can count ink inside the eye band per slot.
+ */
+const SLOT_POSE: Partial<Pose> = { mouthSmile: 0.55 };
+const SLOT_SCALE = 1.35;
+const SIDE: Partial<Pose> = { headTurn: -0.95, lookX: -0.8 };
+
+const SlotPanel: React.FC<{ label: string; slot?: React.ReactNode; view?: Partial<Pose> }> = ({
+  label,
+  slot,
+  view,
+}) => (
+  <div style={{ width: 440, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div style={{ width: 312 * SLOT_SCALE, height: 312 * SLOT_SCALE, position: 'relative' }}>
+      <div
+        style={{ width: 312, height: 360, transform: `scale(${SLOT_SCALE})`, transformOrigin: '0 0' }}
+      >
+        <StickGuy
+          pose={{ ...STAND, ...SLOT_POSE, ...view }}
+          shadow={false}
+          viewBox={HEAD_BOX}
+          headSlot={slot}
+        />
+      </div>
+    </div>
+    <div style={{ fontFamily: 'monospace', fontSize: 18, letterSpacing: 2, color: INK, marginTop: 6 }}>
+      {label}
+    </div>
+  </div>
+);
+
+export const HeadSlotAudit: React.FC = () => (
+  <AbsoluteFill style={{ background: BG, padding: '14px 0' }}>
+    <div
+      style={{
+        fontFamily: 'monospace',
+        fontSize: 20,
+        letterSpacing: 3,
+        color: '#8A8070',
+        margin: '0 0 4px 20px',
+      }}
+    >
+      HEAD-SLOT AUDIT — eye band must stay clear, front AND profile
+    </div>
+    <div style={{ display: 'flex', justifyContent: 'center', gap: 16 }}>
+      <SlotPanel label="FRONT · NONE" />
+      <SlotPanel label="SIDE · NONE" view={SIDE} />
+      <SlotPanel label="FRONT · BEANIE" slot={<RedBeanie />} />
+      <SlotPanel label="SIDE · BEANIE" slot={<RedBeanie />} view={SIDE} />
+      <SlotPanel label="FRONT · BAND" slot={<RedHeadband />} />
+      <SlotPanel label="SIDE · BAND" slot={<RedHeadband />} view={SIDE} />
+    </div>
+  </AbsoluteFill>
+);
+
+export const HeadSlotAuditRoot: React.FC = () => (
+  <Composition
+    id="HeadSlotAudit"
+    component={HeadSlotAudit}
+    durationInFrames={30}
+    fps={30}
+    width={2720}
+    height={600}
+  />
+);

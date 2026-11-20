@@ -284,29 +284,33 @@ export const SoccerBall: React.FC<SvgProps> = ({ width = 120, height = 120, styl
 
 /** Red headband — "costume state = mindset state": resolve/discipline mode.
  *  `stream` (0-1) stretches the knot into streaming tails — panel 6's kick,
- *  where the ribbons trail away from the strike. */
+ *  where the ribbons trail away from the strike.
+ *
+ *  Gate: the band must stay above the eye band (eyes start at y 65.5) or it
+ *  paints over the pupils. Apex y 32, ends y 58, stroke 11 -> top edge at the
+ *  eyes' side is ~52, i.e. 13 px of clearance (measured in HeadSlotAudit). */
 export const RedHeadband: React.FC<{ scale?: number; stream?: number }> = ({ scale = 1, stream = 0 }) => (
   <g transform={`translate(345 92) scale(${scale}) translate(-345 -92)`}>
-    {/* shallow band across the forehead, following the skull curve */}
+    {/* shallow band across the forehead, above the brow line */}
     <path
-      d="M 269,74 Q 345,46 421,74"
-      fill="none" stroke={RED} strokeWidth={16} strokeLinecap="round"
+      d="M 274,58 Q 345,32 416,58"
+      fill="none" stroke={RED} strokeWidth={11} strokeLinecap="round"
     />
     <path
-      d="M 269,74 Q 345,46 421,74"
-      fill="none" stroke="#FF6A5A" strokeWidth={16} strokeLinecap="round" opacity={0.25} transform="translate(0 -3)"
+      d="M 274,58 Q 345,32 416,58"
+      fill="none" stroke="#FF6A5A" strokeWidth={4} strokeLinecap="round" opacity={0.3} transform="translate(0 -2)"
     />
     {/* knot tail on the right side */}
-    <path d="M 421,74 Q 440,80 446,98" fill="none" stroke={RED} strokeWidth={9} strokeLinecap="round" />
+    <path d="M 414,56 Q 436,64 442,84" fill="none" stroke={RED} strokeWidth={8} strokeLinecap="round" />
     {stream > 0.02 && (
       <g opacity={Math.min(1, stream)}>
         {/* ribbons peel off the knot and stream right, lifting with speed */}
         <path
-          d={`M 417,66 Q ${445 + 45 * stream},${52 - 16 * stream} ${430 + 170 * stream},${80 - 34 * stream}`}
+          d={`M 410,52 Q ${440 + 45 * stream},${38 - 16 * stream} ${424 + 170 * stream},${66 - 34 * stream}`}
           fill="none" stroke={RED} strokeWidth={10} strokeLinecap="round"
         />
         <path
-          d={`M 421,86 Q ${448 + 40 * stream},${104 + 10 * stream} ${425 + 125 * stream},${128 - 14 * stream}`}
+          d={`M 414,70 Q ${444 + 40 * stream},${88 + 10 * stream} ${420 + 125 * stream},${112 - 14 * stream}`}
           fill="none" stroke="#FF6A5A" strokeWidth={8} strokeLinecap="round" opacity={0.85}
         />
       </g>
@@ -314,14 +318,15 @@ export const RedHeadband: React.FC<{ scale?: number; stream?: number }> = ({ sca
   </g>
 );
 
-/** Red beanie — the kid */
+/** Red beanie — the kid. Sits on the skull with the folded brim ending at
+ *  y 58, clear of the eye band (top 65.5), so pupils are never painted over. */
 export const RedBeanie: React.FC<{ scale?: number }> = ({ scale = 1 }) => (
   <g transform={`translate(345 92) scale(${scale}) translate(-345 -92)`}>
-    <path
-      d="M 267,64 Q 267,4 345,4 Q 423,4 423,64 L 423,74 L 267,74 Z"
-      fill={RED}
-    />
-    <rect x={263} y={62} width={164} height={26} rx={13} fill="#B92A22" />
-    <path d="M 345,4 Q 340,-14 358,-18 Q 376,-14 371,2 Z" fill={RED} stroke="#B92A22" strokeWidth={4} />
+    {/* dome hugging the skull (head top is y 10) */}
+    <path d="M 272,48 Q 272,10 345,10 Q 418,10 418,48 Z" fill={RED} />
+    {/* folded brim, following the skull curve */}
+    <path d="M 268,42 Q 345,31 422,42 L 420,58 Q 345,47 270,58 Z" fill="#B92A22" />
+    {/* seam highlight */}
+    <path d="M 276,26 Q 345,12 414,26" fill="none" stroke="#FF6A5A" strokeWidth={4} opacity={0.35} strokeLinecap="round" />
   </g>
 );

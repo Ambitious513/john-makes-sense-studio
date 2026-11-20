@@ -114,6 +114,10 @@ Every shot asset carries gate JSON; a shot without gates is not DONE.
 - **Motion:** planted-foot slip < 0.5 px/frame (see
   `src/characters/StickGuy/gait.test.ts`), no pops > 3× local median, loop seam
   within threshold.
+- **Identity:** a costume slot may not enter the eye band — zero costume pixels
+  inside the eye x-range and eye-band ink within 2% of the no-slot baseline,
+  front and profile (`tools/measure_headslot.py`, exits non-zero on failure).
+  A covered pupil is not a style choice, it is a broken character.
 - **AV:** loudness −14 LUFS ±1, true peak ≤ −1 dBTP, no black frames, duration
   matches IR ±1 frame, audio offset < 40 ms.
 

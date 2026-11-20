@@ -19,7 +19,7 @@ User fixes driving v2:
 
 | # | frames (beat-local) | shot | staging | SFX |
 |---|---|---|---|---|
-| 1.1 | 0–30 | establish wide | blackout lifts → couch, hero LYING face-up, phone above face, blue glow, HUD 0h 06m | whoosh-short f0, thud f14 |
+| 1.1 | 0–30 | establish wide | blackout lifts → couch, hero LYING face-up in the red beanie (default identity), phone above face, blue glow, HUD 0h 06m | whoosh-short f0, thud f14 |
 | 1.2 | 30–96 | texting hold | thumb presses the screen (micro arm pulse); slow push-in (§8 rule: no static hold ≥12f) | typing f40 vol 0.35 |
 | 1.3 | 96–150 | notifications | bubbles pop NEXT TO the phone, one per pop, phone-buzz each; hero unaffected | notification f98/f112/f126 |
 | 1.4 | 60–190 | THE GROW | entity rises from behind the RIGHT armrest: scale 0.35 → 1.35 one-shot ramp, eyes over the couch back at f150 | riser-tension f150 vol 0.4 |
@@ -31,6 +31,10 @@ User fixes driving v2:
 Locked heroSeq: `resolve(0) → walk(30) → ballRest(84) → kick(160) →
 resolve(230)`; push-in from f26 @ 0.0024/frame; HUD red at 0h 07m
 (`alarmAt: 7`).
+
+Costume: DAY 1 wears the **red beanie** (default identity); DAY 2 switches to the
+**red headband** — resolve mode, a deliberate costume change, not a continuity
+error. Both slots are gated above the eye band (`tools/measure_headslot.py`).
 
 | # | frames | shot | staging | SFX |
 |---|---|---|---|---|
