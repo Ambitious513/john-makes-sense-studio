@@ -66,7 +66,7 @@ the creative edit is authored.
 | Stage | Tool | Responsibility |
 |---|---|---|
 | Visual compositing | **Remotion** | hero + world + effects + HUD + captions, in one deterministic timeline |
-| Audio / delivery | **FFmpeg** (scripted) | VO + music + SFX mix, `loudnorm=I=-14:TP=-1`, caption burn, encode |
+| Audio / delivery | **FFmpeg** (scripted) | VO + music + SFX mix, `loudnorm=I=-14:TP=-2`, caption burn, encode — see `tools/final_mix.py` |
 
 DCC-rendered clips enter Remotion as `<OffthreadVideo>` layers — a one-line
 import, not a pipeline link.
