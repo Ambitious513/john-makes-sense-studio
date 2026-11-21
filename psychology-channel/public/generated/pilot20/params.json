@@ -1,0 +1,34 @@
+{
+  "note": "First Flow (Omni) generation round, supplied by the user on 2026-11-21. Model/prompt/seed were not supplied by the user; the fields below record exactly what is known. See docs/pilot/20s-test/qa-generated-takes.md.",
+  "producer": "i2v",
+  "model": "Google Flow (user reported 'Omni 1.1 and 1.2'; exact model version not recorded)",
+  "prompt": "text prompts from docs/pilot/20s-test/storyboard.md were sent; exact final prompt text not recorded by the user",
+  "sourceImage": "unknown - the generated character does not match the supplied sheet, so no sheet reference is evidenced in these takes",
+  "motionRef": null,
+  "seed": "not exposed by the Flow UI",
+  "take": 1,
+  "generatedBy": "user",
+  "received": "2026-11-21",
+  "clips": [
+    {
+      "file": "s1.mp4",
+      "shot": "S1",
+      "intended": "WIDE — he stands still",
+      "measured": { "width": 1280, "height": 720, "fps": 24, "frames": 96, "seconds": 4.032, "nativeAudioMeanDb": -39.6 }
+    },
+    {
+      "file": "s2.mp4",
+      "shot": "S2",
+      "intended": "MEDIUM — the turn + shrug",
+      "measured": { "width": 1280, "height": 720, "fps": 24, "frames": 85, "seconds": 3.542, "nativeAudioMeanDb": -46.9 }
+    },
+    {
+      "file": "s3.mp4",
+      "shot": "S3",
+      "intended": "CLOSE — the line lands",
+      "measured": { "width": 1280, "height": 720, "fps": 24, "frames": 96, "seconds": 4.032, "nativeAudioMeanDb": -27.9 }
+    }
+  ],
+  "gate": "REJECTED — all three clips fail hair, palette and body-aspect gates (see QA doc)",
+  "retrySourceImage": "source-from-sheet.png (prepared from the supplied sheet for the image-first retry)"
+}

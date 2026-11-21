@@ -7,6 +7,11 @@ harder, so one viewing tells us where the model breaks.
 **Source image:** `psychology-channel/out/look/sheet-a.jpg` (the five-pose sheet).
 **Master:** 1920×1080, 30 fps, 600 frames, 20.00 s.
 
+> **Result of the first generation round (2026-11-21): all three takes failed
+> identity and were rejected.** See `qa-generated-takes.md` in this folder for
+> the measurements. The prompts below are the record of what was sent, **not** a
+> validated recipe — do not re-run them unchanged.
+
 **Deliverables in this folder**
 
 | File | What it is |
