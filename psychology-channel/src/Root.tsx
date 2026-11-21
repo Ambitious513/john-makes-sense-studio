@@ -18,6 +18,7 @@ import { OverlaysPreview, OVERLAYS_PREVIEW_DURATION } from './episodes/previews/
 import { HudPreview, HUD_PREVIEW_DURATION } from './episodes/previews/HudPreview';
 import { DayArcSlice, DEMO_BEATS, dayArcFrames } from './episodes/slices/DayArcSlice';
 import { StreetWalk, DURATION as STREET_WALK_DURATION } from './episodes/street/StreetWalk';
+import { Pilot20, DURATION as PILOT20_DURATION } from './episodes/pilot20/Pilot20';
 
 // Canvas spec
 const FPS = 30;
@@ -152,6 +153,21 @@ export const RemotionRoot: React.FC = () => {
         width={1920}
         height={1080}
         defaultProps={{ beats: DEMO_BEATS }}
+      />
+
+      {/*
+        PILOT 20 s �?" timing-locked previz for the Flow (Omni) test.
+        Three framings, generated VO, keyword cards. The generated clips drop
+        into SHOTS[].plate without moving a single frame of the cut.
+      */}
+      <Composition
+        id="Pilot20"
+        component={Pilot20}
+        durationInFrames={PILOT20_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{}}
       />
     </>
   );

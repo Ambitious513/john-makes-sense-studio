@@ -1,0 +1,54 @@
+{
+  "text": "You ever feel tired after doing nothing all day?",
+  "voice": "en-US-AndrewNeural",
+  "fps": 30,
+  "seconds": 2.952,
+  "totalFrames": 89,
+  "words": [
+    {
+      "word": "You",
+      "f0": 4,
+      "f1": 7
+    },
+    {
+      "word": "ever",
+      "f0": 8,
+      "f1": 14
+    },
+    {
+      "word": "feel",
+      "f0": 15,
+      "f1": 22
+    },
+    {
+      "word": "tired",
+      "f0": 22,
+      "f1": 35
+    },
+    {
+      "word": "after",
+      "f0": 36,
+      "f1": 43
+    },
+    {
+      "word": "doing",
+      "f0": 44,
+      "f1": 52
+    },
+    {
+      "word": "nothing",
+      "f0": 52,
+      "f1": 62
+    },
+    {
+      "word": "all",
+      "f0": 62,
+      "f1": 67
+    },
+    {
+      "word": "day",
+      "f0": 67,
+      "f1": 76
+    }
+  ]
+}

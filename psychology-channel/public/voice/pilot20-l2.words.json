@@ -1,0 +1,89 @@
+{
+  "text": "Your brain isn't a battery. It's a prediction machine, and with nothing to confirm, it loops.",
+  "voice": "en-US-AndrewNeural",
+  "fps": 30,
+  "seconds": 6.288,
+  "totalFrames": 189,
+  "words": [
+    {
+      "word": "Your",
+      "f0": 3,
+      "f1": 7
+    },
+    {
+      "word": "brain",
+      "f0": 7,
+      "f1": 17
+    },
+    {
+      "word": "isn't",
+      "f0": 21,
+      "f1": 27
+    },
+    {
+      "word": "a",
+      "f0": 27,
+      "f1": 29
+    },
+    {
+      "word": "battery",
+      "f0": 29,
+      "f1": 45
+    },
+    {
+      "word": "It's",
+      "f0": 59,
+      "f1": 62
+    },
+    {
+      "word": "a",
+      "f0": 62,
+      "f1": 64
+    },
+    {
+      "word": "prediction",
+      "f0": 65,
+      "f1": 79
+    },
+    {
+      "word": "machine",
+      "f0": 79,
+      "f1": 93
+    },
+    {
+      "word": "and",
+      "f0": 103,
+      "f1": 105
+    },
+    {
+      "word": "with",
+      "f0": 106,
+      "f1": 111
+    },
+    {
+      "word": "nothing",
+      "f0": 111,
+      "f1": 123
+    },
+    {
+      "word": "to",
+      "f0": 124,
+      "f1": 127
+    },
+    {
+      "word": "confirm",
+      "f0": 128,
+      "f1": 144
+    },
+    {
+      "word": "it",
+      "f0": 157,
+      "f1": 160
+    },
+    {
+      "word": "loops",
+      "f0": 161,
+      "f1": 177
+    }
+  ]
+}

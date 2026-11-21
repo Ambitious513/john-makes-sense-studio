@@ -1,0 +1,74 @@
+{
+  "text": "Rest isn't the absence of work. It's the presence of a finish line.",
+  "voice": "en-US-AndrewNeural",
+  "fps": 30,
+  "seconds": 4.584,
+  "totalFrames": 138,
+  "words": [
+    {
+      "word": "Rest",
+      "f0": 3,
+      "f1": 13
+    },
+    {
+      "word": "isn't",
+      "f0": 17,
+      "f1": 24
+    },
+    {
+      "word": "the",
+      "f0": 24,
+      "f1": 27
+    },
+    {
+      "word": "absence",
+      "f0": 28,
+      "f1": 42
+    },
+    {
+      "word": "of",
+      "f0": 43,
+      "f1": 46
+    },
+    {
+      "word": "work",
+      "f0": 46,
+      "f1": 58
+    },
+    {
+      "word": "It's",
+      "f0": 72,
+      "f1": 76
+    },
+    {
+      "word": "the",
+      "f0": 76,
+      "f1": 80
+    },
+    {
+      "word": "presence",
+      "f0": 80,
+      "f1": 95
+    },
+    {
+      "word": "of",
+      "f0": 95,
+      "f1": 97
+    },
+    {
+      "word": "a",
+      "f0": 98,
+      "f1": 100
+    },
+    {
+      "word": "finish",
+      "f0": 100,
+      "f1": 113
+    },
+    {
+      "word": "line",
+      "f0": 114,
+      "f1": 125
+    }
+  ]
+}
