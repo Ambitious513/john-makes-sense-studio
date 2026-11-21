@@ -140,6 +140,19 @@ quality control instead of the renderer.
 asset contract, or (b) a layer that conforms to §2.4. Otherwise it stays out of
 the render path.
 
+**Synfig — checked, not adopted (measured 2026-11-21).** Synfig is already
+agent-native: the shipped `synfig.exe` *is* the headless renderer (`-t` target,
+`-w/-h`, `--fps`, `--time`, `--begin-time/--end-time`, `-T` threads, PNG/ffmpeg
+targets), and `.sif` is plain XML. On the portable win64 build (v1.5.5, 118 MB
+zip, no install) a 40-line hand-generated `.sif` rendered 24 frames at 320×180 in
+0.48 s, and the animated radius matched its linear model to ≤0.02 px on every
+steady frame. A CLI-Anything harness would therefore only re-wrap a CLI that
+already exists — and two measured quirks make it a poor delivery renderer: the
+ffmpeg target returned 320×184 `yuv444p` for a 320×180 canvas, and the PNG target
+ignores `bgcolor` (alpha only). If ever used: render PNG, encode with our ffmpeg.
+It remains what the table says — a world/effects renderer on demand. It does not
+produce performance, which is the current bottleneck.
+
 **Model choice is deliberately open.** Several models are capable and the field
 moves monthly; the pipeline above is model-agnostic because the contract is the
 clip plus its `params.json`, not the vendor.
