@@ -7,10 +7,12 @@ harder, so one viewing tells us where the model breaks.
 **Source image:** `psychology-channel/out/look/sheet-a.jpg` (the five-pose sheet).
 **Master:** 1920×1080, 30 fps, 600 frames, 20.00 s.
 
-> **Result of the first generation round (2026-11-21): all three takes failed
-> identity and were rejected.** See `qa-generated-takes.md` in this folder for
-> the measurements. The prompts below are the record of what was sent, **not** a
-> validated recipe — do not re-run them unchanged.
+> **Result (2026-11-21):** the takes did not match the sheet, but the producer
+> used last-frame chaining and shipped them **as-is** — no motion transfer. The
+> chained clips pass cross-clip continuity (ΔE 1.48 / 2.37). See
+> `qa-generated-takes.md` for the corrected acceptance test and the delivered
+> 11.6 s as-is cut. The prompts below are the record of what was sent, not a
+> validated recipe for matching the sheet.
 
 **Deliverables in this folder**
 

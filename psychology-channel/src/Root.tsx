@@ -19,6 +19,7 @@ import { HudPreview, HUD_PREVIEW_DURATION } from './episodes/previews/HudPreview
 import { DayArcSlice, DEMO_BEATS, dayArcFrames } from './episodes/slices/DayArcSlice';
 import { StreetWalk, DURATION as STREET_WALK_DURATION } from './episodes/street/StreetWalk';
 import { Pilot20, DURATION as PILOT20_DURATION } from './episodes/pilot20/Pilot20';
+import { PilotGenerated, DURATION as PILOT_GENERATED_DURATION } from './episodes/pilot20/PilotGenerated';
 
 // Canvas spec
 const FPS = 30;
@@ -164,6 +165,20 @@ export const RemotionRoot: React.FC = () => {
         id="Pilot20"
         component={Pilot20}
         durationInFrames={PILOT20_DURATION}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{}}
+      />
+
+      {/*
+        AS-IS CUT -- the Flow clips play at native speed, untouched. The rig is
+        not in this composition; code only supplies narration and graphics.
+      */}
+      <Composition
+        id="PilotGenerated"
+        component={PilotGenerated}
+        durationInFrames={PILOT_GENERATED_DURATION}
         fps={FPS}
         width={1920}
         height={1080}

@@ -1,0 +1,54 @@
+{
+  "text": "Your brain isn't a battery. It's a prediction machine.",
+  "voice": "en-US-AndrewNeural",
+  "fps": 30,
+  "seconds": 3.456,
+  "totalFrames": 104,
+  "words": [
+    {
+      "word": "Your",
+      "f0": 3,
+      "f1": 7
+    },
+    {
+      "word": "brain",
+      "f0": 7,
+      "f1": 17
+    },
+    {
+      "word": "isn't",
+      "f0": 21,
+      "f1": 27
+    },
+    {
+      "word": "a",
+      "f0": 27,
+      "f1": 29
+    },
+    {
+      "word": "battery",
+      "f0": 29,
+      "f1": 45
+    },
+    {
+      "word": "It's",
+      "f0": 59,
+      "f1": 62
+    },
+    {
+      "word": "a",
+      "f0": 63,
+      "f1": 65
+    },
+    {
+      "word": "prediction",
+      "f0": 65,
+      "f1": 79
+    },
+    {
+      "word": "machine",
+      "f0": 79,
+      "f1": 92
+    }
+  ]
+}

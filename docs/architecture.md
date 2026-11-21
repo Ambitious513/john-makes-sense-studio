@@ -190,6 +190,17 @@ a number — it can only be measured and re-generated.
 - **Identity slot:** a costume slot may not enter the eye band
   (`tools/measure_headslot.py`). A covered pupil is not a style choice.
 
+**As-is generated heroes — different primary gate.** When the producer supplies
+the hero as finished clips *and we do not transfer the motion*, the identity
+question is not "does one frame match the sheet?" but "do the chained takes
+share one character?". Measure the previous clip's last frame against the next
+clip's first frame: palette ΔE ≤ 4, hair-coverage delta ≤ 0.05, body-aspect delta
+≤ 0.02, box drift ≤ 5 px (`tools/measure_generated_take.py`). The pilot's
+last-frame chain measured ΔE 1.48 / 2.37, hair Δ 0.009 / 0.008, aspect Δ ≤0.001,
+drift 3.6 / 0.7 px — PASS. Applying the sheet-IoU gate to such a take is a
+category error; it belongs to code-rendered rigs and takes meant to match a
+still. Never freeze, retime or re-animate an as-is take to make a gate pass.
+
 **Performance is not gated.** Weight, intent and acting quality are judged by a
 human watching the take. No metric in this repo measures them, and pretending
 otherwise is how we lost time.

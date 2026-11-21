@@ -23,6 +23,8 @@ psychology-channel/public/**/*.wav
 workspace.tar*.gz
 *.tar.gz
 
-# ---- OS noise ----
+# ---- OS / python noise ----
 .DS_Store
 Thumbs.db
+__pycache__/
+*.pyc

@@ -1,0 +1,49 @@
+{
+  "text": "Rest is the presence of a finish line.",
+  "voice": "en-US-AndrewNeural",
+  "fps": 30,
+  "seconds": 2.76,
+  "totalFrames": 83,
+  "words": [
+    {
+      "word": "Rest",
+      "f0": 3,
+      "f1": 15
+    },
+    {
+      "word": "is",
+      "f0": 17,
+      "f1": 20
+    },
+    {
+      "word": "the",
+      "f0": 21,
+      "f1": 24
+    },
+    {
+      "word": "presence",
+      "f0": 25,
+      "f1": 41
+    },
+    {
+      "word": "of",
+      "f0": 42,
+      "f1": 44
+    },
+    {
+      "word": "a",
+      "f0": 44,
+      "f1": 46
+    },
+    {
+      "word": "finish",
+      "f0": 46,
+      "f1": 60
+    },
+    {
+      "word": "line",
+      "f0": 60,
+      "f1": 71
+    }
+  ]
+}

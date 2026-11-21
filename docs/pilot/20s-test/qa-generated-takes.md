@@ -98,5 +98,57 @@ prompts is not: the text was already ignored.
 - `tools/measure_generated_take.py` — the gate used above; reusable on any take.
 - `out/pilot20/generated-check/verdict-sheet.png` — previz vs generated, 3 shots.
 - `out/pilot20/generated-check/flow-raw-reel.mp4` — raw Flow output, 11.6 s.
-- `out/pilot20/Pilot20.previz.mp4` — the timing-locked 20 s code cut (still the
-  only deliverable that passes the gates).
+- `out/pilot20/Pilot20.previz.mp4` — the timing-locked 20 s code previz.
+
+---
+
+## Addendum — user clarification (same day)
+
+The producer confirmed two things I did not know when I wrote the verdict above:
+
+1. **The sheet WAS attached as a reference in Flow.**
+2. **Each subsequent clip was generated from the previous clip's last frame**,
+   which is how character continuity was held across shots.
+
+That changes the acceptance test. I measured the property they actually built
+for — continuity between chained clips, not similarity to the sheet:
+
+| Boundary | Hair Δ | Sweater ΔE | Aspect Δ | Box drift |
+|---|---|---|---|---|
+| s1 last → s2 first | +0.009 | **1.48** | −0.0003 | 3.6 px |
+| s2 last → s3 first | +0.008 | **2.37** | −0.0010 | 0.7 px |
+
+Both are **PASS** against the palette limit of ΔE ≤ 4. The last-frame chaining
+worked: the clips share one character. My earlier "reject" applied the sheet
+gate to a workflow whose contract is *continuity between generated takes*, not
+identity with a still. That was the wrong gate, and the verdict above is
+therefore superseded for this workflow.
+
+**Decision recorded:** the generated clips are shipped **as-is**. There is no
+motion transfer, no rig substitution, no speed ramp and no freeze — Flow's
+performance is the picture. Code contributes only narration, keyword cards,
+corner bug, bed and mix. For as-is generated heroes the primary gate is
+cross-clip continuity plus a human performance watch; the sheet-IoU gate stays
+for code-rendered rigs and for takes we intend to match to the sheet.
+
+### The as-is deliverable
+
+`psychology-channel/out/pilot20/PilotGenerated.as-is.mp4` — 11.60 s, 348 frames
+@ 30 fps, 1920×1080, **−14.21 LUFS / −1.92 dBTP PASS**. Native clip speed; hard
+cuts at frames 121 and 227. The VO was re-cut to fit (2.95 / 3.46 / 2.76 s).
+
+Proof that the picture was not re-animated — mean absolute pixel difference
+between the delivered frames and the source clips' first frames, hero region:
+
+| Cut | Mean abs diff (0–255) |
+|---|---|
+| frame 0 vs s1 frame 0 | 1.82 |
+| frame 121 vs s2 frame 0 | 1.60 |
+| frame 227 vs s3 frame 0 | 1.46 |
+
+That is H264 re-encode and 1280→1920 upscale noise only. The generated motion
+is unchanged.
+
+Flow returned ~4 s clips, so the honest native-speed cut is 11.6 s, not 20 s.
+We did not pad it with held frames: freezing a performance would discard the
+only reason to use the model. A full 20 s piece needs two more chained clips.

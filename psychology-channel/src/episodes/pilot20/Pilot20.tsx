@@ -234,14 +234,14 @@ const S3: React.FC = () => {
  * Graphics: keyword card + corner bug. One card per beat, never a
  * full transcript — the narration already says the words.
  * ------------------------------------------------------------------ */
-const KeywordCard: React.FC<Card> = ({ from, to, text }) => {
+export const KeywordCard: React.FC<Card & { x?: number }> = ({ from, to, text, x }) => {
   const f = useCurrentFrame();
   const inU = interpolate(f, [from, from + 10], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
   const outU = interpolate(f, [to - 8, to], [1, 0], clamp);
   const o = Math.min(inU, outU);
   if (o <= 0) return null;
   return (
-    <div style={{ position: 'absolute', left: 132, top: 900, opacity: o, transform: `translateY(${(1 - inU) * 14}px)` }}>
+    <div style={{ position: 'absolute', left: x ?? 132, top: 900, opacity: o, transform: `translateY(${(1 - inU) * 14}px)` }}>
       <div
         style={{
           fontFamily: '"Patrick Hand", monospace',
@@ -258,7 +258,7 @@ const KeywordCard: React.FC<Card> = ({ from, to, text }) => {
   );
 };
 
-const Bug: React.FC = () => (
+export const Bug: React.FC = () => (
   <div
     style={{
       position: 'absolute',
